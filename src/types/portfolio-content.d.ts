@@ -121,6 +121,7 @@ export interface FooterContent {
   contact: {
     email: string;
     whatsapp: string;
+    portfolio: string;
   };
   social: {
     github: string;

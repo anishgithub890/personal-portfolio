@@ -1,7 +1,7 @@
 'use client';
 import portfolioContent from '@/lib/portfolio-content';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, Github, Linkedin, FileText } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, FileText, Globe } from 'lucide-react';
 import type { JobExperience, Skill } from '@/types/portfolio-content';
 import Image from 'next/image';
 
@@ -76,6 +76,12 @@ export default function CVPage() {
               <Linkedin className="h-3.5 w-3.5 shrink-0 text-muted-foreground align-middle print:h-3 print:w-3 print:shrink-0" />
               <a href={footer.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:underline align-middle print:text-xs print:leading-none">
                 LinkedIn
+              </a>
+            </div>
+            <div className="inline-flex items-center gap-1 flex-nowrap whitespace-nowrap print:flex-nowrap print:whitespace-nowrap">
+              <Globe className="h-3.5 w-3.5 shrink-0 text-muted-foreground align-middle print:h-3 print:w-3 print:shrink-0" />
+              <a href={footer.contact.portfolio} target="_blank" rel="noopener noreferrer" className="hover:underline align-middle print:text-xs print:leading-none">
+                Portfolio
               </a>
             </div>
           </div>

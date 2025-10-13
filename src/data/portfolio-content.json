@@ -1,0 +1,307 @@
+{
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Anish Mahato",
+    "title": "Full Stack Developer",
+    "description": "Passionate about creating innovative web solutions with modern technologies. Specializing in React, Next.js, TypeScript, and full-stack development.",
+    "buttons": {
+      "primary": "Learn More",
+      "secondary": "Get In Touch"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "A passionate Full Stack Developer with a love for creating innovative solutions",
+    "personalInfo": {
+      "whoIAm": "I'm a dedicated Full Stack Developer with 2.5 years of experience creating exceptional digital experiences. With expertise in modern web technologies, I specialize in building scalable applications that solve real-world problems.",
+      "journey": "My journey in software development started with a curiosity about how things work on the web, which has evolved into a deep understanding of both frontend and backend technologies. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.",
+      "personal": "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
+      "nationality": "Nepal"
+    },
+    "education": [
+      {
+        "degree": "Bachelor's Degree",
+        "institution": "London Metropolitan University",
+        "field": "Computer Science & Technology"
+      },
+      {
+        "degree": "10+2 Science",
+        "institution": "Oxford Higher Secondary School",
+        "field": "Science"
+      }
+    ],
+    "services": {
+      "frontend": {
+        "title": "Frontend Development",
+        "technologies": "React, Next.js, TypeScript, Tailwind CSS"
+      },
+      "backend": {
+        "title": "Backend Development",
+        "technologies": "Node.js, Express, MongoDB, PostgreSQL"
+      },
+      "devops": {
+        "title": "DevOps & Tools",
+        "technologies": "Docker, Git, CI/CD, AWS"
+      },
+      "design": {
+        "title": "Design & UX",
+        "technologies": "Figma, Responsive Design, Accessibility"
+      }
+    },
+    "stats": [
+      {
+        "label": "Projects Completed",
+        "value": "20+",
+        "icon": "Code"
+      },
+      {
+        "label": "Years Experience",
+        "value": "2.5+",
+        "icon": "Globe"
+      },
+      {
+        "label": "Technologies",
+        "value": "15+",
+        "icon": "Zap"
+      },
+      {
+        "label": "Happy Clients",
+        "value": "20+",
+        "icon": "Users"
+      }
+    ],
+    "interests": [
+      "Web Development",
+      "Mobile Apps",
+      "Machine Learning",
+      "Open Source",
+      "Problem Solving",
+      "Team Collaboration",
+      "SaaS"
+    ]
+  },
+  "experience": {
+    "title": "Work Experience",
+    "subtitle": "My professional journey and the impact I've made along the way",
+    "jobs": [
+      {
+        "company": "Chaturvedi Software House LLC",
+        "position": "Full Stack Developer - Frontend & Backend Lead",
+        "location": "Dubai, UAE",
+        "startDate": "2025",
+        "endDate": "Present",
+        "current": true,
+        "description": "Led both frontend and backend development with full ownership of system architecture for a comprehensive property marketplace connecting brokers with listings, buyer requirements, and AI-powered matching.",
+        "technologies": ["React", "Next.js", "Node.js", "MySQL", "TypeScript", "TailwindCSS", "shadcn/ui", "REST APIs", "Prisma", "JWT", "OAuth", "AI Integration"],
+        "achievements": [
+          "Built comprehensive property marketplace with broker directory and transaction management",
+          "Implemented AI-powered matching system for property listings and buyer requirements",
+          "Developed complete backend architecture including activity feeds and third-party integrations (Bayut, PropertyFinder)",
+          "Created admin panel with bulk actions, property imports, and social collaboration features",
+          "Collaborated with frontend team while owning full backend development independently"
+        ]
+      },
+      {
+        "company": "Chaturvedi Software House LLC",
+        "position": "Full Stack Developer",
+        "location": "Dubai, UAE",
+        "startDate": "2025",
+        "endDate": "Present",
+        "current": true,
+        "description": "Developed comprehensive enterprise-level Real Estate Management System (Fincore RMS) - a multi-tenant SaaS platform for managing property rentals, sales, tenant relationships, and facility operations. Built complete web application independently while closely collaborating with backend developer for API integration and system architecture.",
+        "technologies": ["Next.js 15.5", "React 19", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Radix UI", "Material-UI", "Framer Motion", "Redux Toolkit", "TanStack React Query", "React Hook Form", "Zod", "Chart.js", "Recharts", "jsPDF", "React-PDF", "PDF.js", "html2canvas", "Axios", "JWT", "AWS", "Docker", "Prisma"],
+        "achievements": [
+          "Built complete multi-tenant SaaS Real Estate Management System with role-based authentication (Admin, Tenant, Landlord)",
+          "Implemented AI-powered property matching system with intelligent lead-to-unit matching based on preferences",
+          "Developed comprehensive contract management with digital signatures, PDF generation, and document processing",
+          "Created financial operations dashboard with payment tracking, cheques summary, and KYC document management",
+          "Built maintenance ticketing system with complaint management and multi-level approval workflows",
+          "Developed 15+ master data modules with reusable data table components and CRUD operations",
+          "Built 55+ reusable UI components and custom hooks for debouncing, pagination, and authentication",
+          "Implemented responsive design with dark/light theme, command menu (Cmd+K), and performance optimization",
+          "Delivered production-ready enterprise application managing multiple properties and thousands of tenants"
+        ]
+      },
+      {
+        "company": "Chaturvedi Software House LLC",
+        "position": "Backend Developer",
+        "location": "Dubai, UAE",
+        "startDate": "2025",
+        "endDate": "Present",
+        "current": true,
+        "description": "Specialized in backend development for ERP Tally Prime system, focusing on financial management, inventory control, and business process automation. Responsible for API development, database optimization, and integration with third-party systems for comprehensive business management solutions.",
+        "technologies": ["Node.js", "Express.js", "MySQL", "MongoDB", "REST APIs", "GraphQL", "TypeScript", "Prisma", "Redis", "Docker", "AWS", "Microservices", "JWT", "OAuth"],
+        "achievements": [
+          "Developed robust backend APIs for financial management and inventory control systems",
+          "Built comprehensive business process automation with ERP integration",
+          "Optimized database performance and implemented caching strategies with Redis",
+          "Created microservices architecture for scalable ERP solutions",
+          "Integrated third-party systems and payment gateways for seamless business operations",
+          "Implemented real-time data synchronization and reporting features",
+          "Built secure authentication and authorization systems for multi-user access",
+          "Delivered 1+ year of consistent backend development for enterprise ERP solutions"
+        ]
+      },
+      {
+        "company": "Channakya Software Private Limited",
+        "position": "Full Stack Developer",
+        "location": "Kathmandu, Nepal",
+        "startDate": "2022-02",
+        "endDate": "2022-11",
+        "current": false,
+        "description": "Worked across multiple roles including backend, frontend, and .NET development. Contributed to projects involving API development, frontend implementation, and performance optimization.",
+        "technologies": [
+          "Node.js",
+          "MongoDB",
+          "MySQL",
+          "React.js",
+          "TypeScript",
+          ".NET Framework",
+          "API Testing"
+        ],
+        "achievements": [
+          "Developed backend APIs using Node.js and integrated with MongoDB and MySQL",
+          "Built responsive frontend features using React.js and TypeScript",
+          "Worked on a .NET-based eCommerce website and performed API testing across modules"
+        ]
+      },
+      {
+        "company": "Islington College Kathmandu",
+        "position": "Full Stack Developer Intern",
+        "location": "Kathmandu, Nepal",
+        "startDate": "2020-11",
+        "endDate": "2021-10",
+        "current": false,
+        "description": "Held multiple development roles during a year-long internship program, contributing to mobile and backend projects using Flutter, Laravel, and Android Java.",
+        "technologies": [
+          "Flutter",
+          "Laravel",
+          "PHP",
+          "MySQL",
+          "Workbench",
+          "Android (Java)",
+          "Oracle Database"
+        ],
+        "achievements": [
+          "Developed mobile applications using Flutter during iOS internship phase",
+          "Built backend services with Laravel and MySQL, including API integrations",
+          "Contributed to Android apps using Java and Oracle Database during initial internship phase"
+        ]
+      }      
+    ],
+    "education": {
+      "title": "Education",
+      "degree": "Bachelor of Science in Computer Science",
+      "institution": "University of Technology",
+      "duration": "2016 - 2020",
+      "gpa": "3.8/4.0",
+      "description": "Graduated with honors. Specialized in software engineering and web development. Completed capstone project on modern web application architecture."
+    }
+  },
+  "skills": {
+    "title": "My Skills",
+    "subtitle": "A comprehensive overview of my technical expertise and proficiency levels",
+    "categories": {
+      "frontend": [
+        { "name": "React", "proficiency": 95 },
+        { "name": "Next.js", "proficiency": 90 },
+        { "name": "TypeScript", "proficiency": 88 },
+        { "name": "JavaScript", "proficiency": 92 },
+        { "name": "Tailwind CSS", "proficiency": 85 },
+        { "name": "HTML/CSS", "proficiency": 90 }
+      ],
+      "backend": [
+        { "name": "Node.js", "proficiency": 85 },
+        { "name": "Express.js", "proficiency": 80 },
+        { "name": "REST APIs", "proficiency": 88 }
+      ],
+      "database": [
+        { "name": "MongoDB", "proficiency": 85 },
+        { "name": "MySQL", "proficiency": 75 },
+        { "name": "Redis", "proficiency": 70 },
+        { "name": "Prisma", "proficiency": 80 },
+        { "name": "Mongoose", "proficiency": 85 }
+      ]
+    },
+    "otherSkills": [
+      "Figma",
+      "Postman",
+      "VS Code",
+      "Android Studio",
+      "Webpack",
+      "Vite",
+      "Framer Motion",
+      "Redux",
+      "Zustand",
+      "React Query",
+      "Socket.io",
+      "JWT",
+      "OAuth"
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Let's discuss your next project or just say hello. I'm always open to new opportunities.",
+    "form": {
+      "title": "Send a Message",
+      "subtitle": "Fill out the form below to get in touch",
+      "fields": {
+        "name": {
+          "label": "Full Name",
+          "placeholder": "Enter your full name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter your email"
+        },
+        "phone": {
+          "label": "Phone Number",
+          "placeholder": "Enter your phone number"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Tell me about your project or just say hello..."
+        }
+      },
+      "submitButton": "Send Message",
+      "loadingText": "Sending...",
+      "successMessage": "Message Sent Successfully!",
+      "successDescription": "Thank you for reaching out. I'll get back to you soon."
+    },
+    "validation": {
+      "name": "Name must be at least 2 characters",
+      "email": "Please enter a valid email address",
+      "phone": "Please enter a valid phone number",
+      "message": "Message must be at least 10 characters"
+    },
+    "errors": {
+      "formSubmission": "Failed to send message",
+      "networkError": "Failed to send message. Please try again."
+    }
+  },
+  "footer": {
+    "brand": {
+      "initials": "AM",
+      "tagline": "Full Stack Developer & Creative Problem Solver"
+    },
+    "contact": {
+      "email": "anishgithub890@gmail.com",
+      "whatsapp": "+971508572468"
+    },
+    "social": {
+      "github": "https://github.com/anishgithub890",
+      "linkedin": "https://www.linkedin.com/in/anishpabe/"
+    },
+    "sections": {
+      "contactInfo": "Contact Info",
+      "connect": "Connect",
+      "builtWith": "Built With"
+    },
+    "builtWithDescription": "Next.js, TypeScript, Tailwind CSS, and Framer Motion",
+    "copyright": "© {currentYear} Anish Mahato."
+  },
+  "navigation": {
+    "sections": ["hero", "about", "skills", "experience", "contact"],
+    "skillTabs": ["Frontend", "Backend", "Database"] 
+  }
+} 

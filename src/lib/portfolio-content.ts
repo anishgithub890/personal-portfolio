@@ -12,6 +12,7 @@ export const getSkillsContent = () => content.skills;
 export const getContactContent = () => content.contact;
 export const getFooterContent = () => content.footer;
 export const getNavigationContent = () => content.navigation;
+export const getCoverLetterContent = () => content.coverLetter;
 
 // Get all content
 export const getAllContent = () => content;

@@ -86,6 +86,29 @@
     "jobs": [
       {
         "company": "Chaturvedi Software House LLC",
+        "position": "Full Stack Developer - HRMS & CRM System",
+        "location": "Dubai, UAE",
+        "startDate": "2025",
+        "endDate": "Present",
+        "current": true,
+        "description": "Designed and developed a comprehensive enterprise SaaS platform combining Human Resource Management System (HRMS) and Customer Relationship Management (CRM) capabilities. Built as a scalable multi-tenant application with role-based access control, real-time features, and comprehensive analytics supporting multiple companies with complete data isolation.",
+        "technologies": ["Next.js 16", "React 19", "TypeScript", "Node.js", "Express.js", "MySQL", "Prisma ORM", "Redis", "Socket.io", "JWT", "Tailwind CSS", "shadcn/ui", "Zustand", "React Query", "Docker", "Docker Compose", "RESTful APIs", "WebSocket"],
+        "achievements": [
+          "Designed and implemented multi-tenant SaaS architecture with 3-tier hierarchy (Super Admin → Company Admin → Users) and complete data isolation",
+          "Built HRMS module with 20+ features including employee lifecycle management, recruitment, attendance, leave, payroll with multi-currency support, performance management, and people analytics",
+          "Developed CRM module with 25+ features including lead management with scoring and routing, contact/account management, deal pipeline, sales forecasting, quotes, orders, invoicing, and campaign management",
+          "Created complex database schema with 100+ tables, optimized queries, and strategic indexing for high performance",
+          "Implemented advanced security with JWT authentication, RBAC with 100+ granular permissions, 2FA support, and rate limiting",
+          "Built 200+ RESTful API endpoints with consistent response formats, 45+ controllers, 48+ services, and 45+ routes",
+          "Developed frontend with 50+ pages, 100+ components, and 50+ API clients using modern React patterns and state management",
+          "Implemented real-time features with Socket.io, Redis caching for performance, server-side pagination, and code splitting",
+          "Created custom dashboards, Kanban boards, data tables, real-time notifications, audit logging, and import/export functionality",
+          "Built super admin panel for company and license management with advanced navigation using Shadcn UI patterns",
+          "Delivered production-ready enterprise platform with full TypeScript, modular architecture, and centralized error handling"
+        ]
+      },
+      {
+        "company": "Chaturvedi Software House LLC",
         "position": "Full Stack Developer - Frontend & Backend Lead",
         "location": "Dubai, UAE",
         "startDate": "2025",
@@ -304,5 +327,24 @@
   "navigation": {
     "sections": ["hero", "about", "skills", "experience", "contact"],
     "skillTabs": ["Frontend", "Backend", "Database"] 
+  },
+  "coverLetter": {
+    "title": "Cover Letter",
+    "date": "Current Date",
+    "recipient": {
+      "title": "Dear Hiring Manager",
+      "greeting": "To Whom It May Concern"
+    },
+    "opening": "I am writing to express my strong interest in the Full Stack Developer position at your esteemed organization. With over 2.5 years of professional experience in building scalable web applications, including extensive work in Dubai's dynamic tech industry, I bring a proven track record of delivering enterprise-level solutions that drive business growth.",
+    "body": [
+      "Currently based in Dubai, UAE, I have been working with Chaturvedi Software House LLC since 2022, where I have successfully led multiple high-impact projects. My Dubai experience includes developing a comprehensive Real Estate Management System (Fincore RMS) - a multi-tenant SaaS platform serving the UAE property market, building AI-powered property marketplaces with integrations to Bayut and PropertyFinder, and creating ERP solutions for financial management. This regional expertise has given me deep insights into Middle Eastern business requirements, compliance standards, and market dynamics.",
+      "My technical expertise spans the complete full-stack development spectrum. I excel in modern technologies including React 19, Next.js 15, TypeScript, Node.js, and various database systems (MySQL, MongoDB, PostgreSQL). In Dubai, I have independently built production-ready applications managing thousands of tenants and properties, implemented 55+ reusable UI components, developed role-based authentication systems for Admin/Tenant/Landlord access, and created comprehensive backend architectures with RESTful APIs and microservices. My experience includes handling complex requirements such as digital signatures, PDF generation, payment tracking, KYC document management, and third-party integrations.",
+      "What distinguishes my Dubai experience is my ability to deliver complete solutions independently while collaborating effectively with international teams. I have successfully architected and built entire applications from scratch, managed multiple concurrent projects across different business domains (Real Estate, ERP, Property Marketplace), and consistently delivered high-quality solutions that meet strict UAE market standards. My commitment to writing clean, maintainable code and staying current with industry best practices has enabled me to thrive in Dubai's competitive tech landscape."
+    ],
+    "closing": "I am excited about the opportunity to bring my Dubai-based technical expertise, regional market knowledge, and passion for creating innovative solutions to your organization. My experience working in the UAE's fast-paced technology sector, combined with my proven ability to deliver enterprise-level applications, makes me an ideal candidate for this position. I am immediately available and look forward to discussing how I can contribute to your team's success.",
+    "signature": {
+      "farewell": "Sincerely",
+      "name": "Anish Mahato"
+    }
   }
 } 

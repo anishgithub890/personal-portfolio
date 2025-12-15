@@ -141,6 +141,22 @@ export interface NavigationContent {
   skillTabs: string[];
 }
 
+export interface CoverLetterContent {
+  title: string;
+  date: string;
+  recipient: {
+    title: string;
+    greeting: string;
+  };
+  opening: string;
+  body: string[];
+  closing: string;
+  signature: {
+    farewell: string;
+    name: string;
+  };
+}
+
 export interface PortfolioContent {
   hero: HeroContent;
   about: AboutContent;
@@ -149,4 +165,5 @@ export interface PortfolioContent {
   contact: ContactContent;
   footer: FooterContent;
   navigation: NavigationContent;
+  coverLetter: CoverLetterContent;
 } 

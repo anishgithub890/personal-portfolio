@@ -19,6 +19,12 @@ import {
 } from '@/components/ui/form';
 import { Phone, Send, CheckCircle, User, Mail, MessageSquare } from 'lucide-react';
 import { getContactContent } from '@/lib/portfolio-content';
+import dynamic from 'next/dynamic';
+
+const Scene3D = dynamic(() => import('@/components/3D/Scene3D'), { 
+  ssr: false,
+  loading: () => null
+});
 
 const Contact = () => {
   const contactContent = getContactContent();
@@ -78,8 +84,19 @@ type ContactForm = z.infer<typeof contactSchema>;
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-16 md:py-24 bg-muted/30 relative overflow-hidden">
+      {/* 3D Background Scene */}
+      <div className="absolute inset-0 w-full h-full opacity-25">
+        <Scene3D 
+          intensity={0.2}
+          showControls={false}
+          showStars={true}
+          showParticles={true}
+          cameraPosition={[0, 0, 5]}
+        />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -5,8 +5,14 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { formatDate } from '@/lib/utils';
 import { getExperienceContent, getAboutContent } from '@/lib/portfolio-content';
+import dynamic from 'next/dynamic';
 
 import { Calendar, MapPin, ExternalLink, GraduationCap } from 'lucide-react';
+
+const Scene3D = dynamic(() => import('@/components/3D/Scene3D'), { 
+  ssr: false,
+  loading: () => null
+});
 
 const Experience = () => {
   const experienceContent = getExperienceContent();
@@ -19,8 +25,19 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-12 md:py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
+    <section id="experience" className="py-12 md:py-16 bg-muted/30 relative overflow-hidden">
+      {/* 3D Background Scene */}
+      <div className="absolute inset-0 w-full h-full opacity-20">
+        <Scene3D 
+          intensity={0.15}
+          showControls={false}
+          showStars={false}
+          showParticles={true}
+          cameraPosition={[0, 0, 7]}
+        />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

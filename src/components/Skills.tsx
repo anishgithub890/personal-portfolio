@@ -5,6 +5,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { getSkillsContent, getNavigationContent } from '@/lib/portfolio-content';
+import dynamic from 'next/dynamic';
+
+const Scene3D = dynamic(() => import('@/components/3D/Scene3D'), { 
+  ssr: false,
+  loading: () => null
+});
 
 const Skills = () => {
   const skillsContent = getSkillsContent();
@@ -40,11 +46,22 @@ const Skills = () => {
 
   return (
     <section id="skills" className="py-12 md:py-16 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-20 right-20 w-24 h-24 bg-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-20 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+      {/* 3D Background Scene */}
+      <div className="absolute inset-0 w-full h-full opacity-30">
+        <Scene3D 
+          intensity={0.2}
+          showControls={false}
+          showStars={false}
+          showParticles={true}
+          cameraPosition={[0, 0, 8]}
+        />
+      </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      {/* Background decorative elements */}
+      <div className="absolute top-20 right-20 w-24 h-24 bg-primary/5 rounded-full blur-3xl z-0"></div>
+      <div className="absolute bottom-20 left-20 w-32 h-32 bg-primary/5 rounded-full blur-3xl z-0"></div>
+      
+      <div className="container mx-auto px-4 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

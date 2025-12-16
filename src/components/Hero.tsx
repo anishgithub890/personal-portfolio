@@ -6,6 +6,12 @@ import { ArrowDown, Mail, Download, Play, FileText } from 'lucide-react';
 import { getHeroContent } from '@/lib/portfolio-content';
 import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
+import dynamic from 'next/dynamic';
+
+const Scene3D = dynamic(() => import('@/components/3D/Scene3D'), { 
+  ssr: false,
+  loading: () => null
+});
 
 const Hero = () => {
   const heroContent = getHeroContent();
@@ -95,18 +101,29 @@ const Hero = () => {
       className="min-h-[100vh] flex items-center justify-center relative overflow-hidden gpu-accelerated pt-16 pb-24 xxs:py-16 sm:py-8 max-w-full w-full"
       style={{ maxWidth: '100%', overflowX: 'hidden' }}
     >
+      {/* 3D Background Scene */}
+      <div className="absolute inset-0 w-full h-full">
+        <Scene3D 
+          intensity={0.3}
+          showControls={false}
+          showStars={true}
+          showParticles={true}
+          cameraPosition={[0, 0, 5]}
+        />
+      </div>
+      
       {/* Enhanced Background Pattern */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute inset-0 bg-grid-pattern opacity-5 z-0"></div>
       
       {/* Animated Background with reduced motion support */}
       <motion.div 
-        className="absolute inset-0 animated-bg opacity-10 hidden md:block"
+        className="absolute inset-0 animated-bg opacity-10 hidden md:block z-0"
         animate={isInView ? { opacity: 0.1 } : { opacity: 0 }}
         transition={{ duration: 1 }}
       />
 
-      {/* Particle Effects */}
-      <div className="hidden md:block">
+      {/* Particle Effects - Now handled by 3D scene */}
+      <div className="hidden md:block opacity-30">
         <Particles />
       </div>
 
@@ -132,7 +149,7 @@ const Hero = () => {
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
 
-      <div className="container mx-auto px-4 relative z-10 w-full max-w-full overflow-hidden">
+      <div className="container mx-auto px-4 relative z-20 w-full max-w-full overflow-hidden">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-16">
           {/* Enhanced Profile Image Section */}
           <motion.div

@@ -7,6 +7,12 @@ import { Separator } from '@/components/ui/separator';
 import { Code, Globe, Zap, Users, Award, BookOpen, Target, Heart } from 'lucide-react';
 import { getAboutContent } from '@/lib/portfolio-content';
 import { useRef } from 'react';
+import dynamic from 'next/dynamic';
+
+const Scene3D = dynamic(() => import('@/components/3D/Scene3D'), { 
+  ssr: false,
+  loading: () => null
+});
 
 const About = () => {
   const aboutContent = getAboutContent();
@@ -43,19 +49,30 @@ const About = () => {
       id="about" 
       className="py-16 md:py-24 bg-muted/30 relative overflow-hidden gpu-accelerated"
     >
+      {/* 3D Background Scene */}
+      <div className="absolute inset-0 w-full h-full opacity-25">
+        <Scene3D 
+          intensity={0.2}
+          showControls={false}
+          showStars={false}
+          showParticles={true}
+          cameraPosition={[0, 0, 6]}
+        />
+      </div>
+      
       {/* Background decorative elements */}
       <motion.div 
-        className="absolute top-10 left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl"
+        className="absolute top-10 left-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl z-0"
         animate={isInView ? { scale: [1, 1.2, 1] } : { scale: 1 }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div 
-        className="absolute bottom-10 right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl"
+        className="absolute bottom-10 right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl z-0"
         animate={isInView ? { scale: [1, 1.3, 1] } : { scale: 1 }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}

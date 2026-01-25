@@ -13,7 +13,7 @@
     "title": "About Me",
     "subtitle": "A passionate Full Stack Developer with a love for creating innovative solutions",
     "personalInfo": {
-      "whoIAm": "I'm a dedicated Full Stack Developer with 3+ years of experience creating exceptional digital experiences. With expertise in modern web technologies, I specialize in building scalable applications that solve real-world problems.",
+      "whoIAm": "I'm a dedicated Full Stack Developer with 4 years of experience creating exceptional digital experiences. With expertise in modern web technologies, I specialize in building scalable applications that solve real-world problems.",
       "journey": "My journey in software development started with a curiosity about how things work on the web, which has evolved into a deep understanding of both frontend and backend technologies. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.",
       "personal": "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
       "nationality": "Nepal"
@@ -41,7 +41,7 @@
       },
       "devops": {
         "title": "DevOps & Tools",
-        "technologies": "Docker, Git, CI/CD, AWS"
+        "technologies": "Docker, Git, CI/CD, VM"
       },
       "design": {
         "title": "Design & UX",
@@ -56,7 +56,7 @@
       },
       {
         "label": "Years Experience",
-        "value": "3+",
+        "value": "4",
         "icon": "Globe"
       },
       {
@@ -132,7 +132,7 @@
         "endDate": "Present",
         "current": true,
         "description": "Developed comprehensive enterprise-level Real Estate Management System (Fincore RMS) - a multi-tenant SaaS platform for managing property rentals, sales, tenant relationships, and facility operations. Built complete web application independently while closely collaborating with backend developer for API integration and system architecture.",
-        "technologies": ["Next.js 15.5", "React 19", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Radix UI", "Material-UI", "Framer Motion", "Redux Toolkit", "TanStack React Query", "React Hook Form", "Zod", "Chart.js", "Recharts", "jsPDF", "React-PDF", "PDF.js", "html2canvas", "Axios", "JWT", "AWS", "Docker", "Prisma"],
+        "technologies": ["Next.js", "React 19", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Radix UI", "Material-UI", "Framer Motion", "Redux Toolkit", "TanStack React Query", "React Hook Form", "Zod", "Chart.js", "Recharts", "jsPDF", "React-PDF", "PDF.js", "html2canvas", "Axios", "JWT", "AWS", "Docker", "Prisma"],
         "achievements": [
           "Built complete multi-tenant SaaS Real Estate Management System with role-based authentication (Admin, Tenant, Landlord)",
           "Implemented AI-powered property matching system with intelligent lead-to-unit matching based on preferences",
@@ -236,17 +236,25 @@
       "backend": [
         { "name": "Node.js", "proficiency": 85 },
         { "name": "Express.js", "proficiency": 80 },
-        { "name": "REST APIs", "proficiency": 88 }
+        { "name": "REST APIs", "proficiency": 88 },
+        { "name": "Laravel", "proficiency": 75 }
       ],
       "database": [
         { "name": "MongoDB", "proficiency": 85 },
         { "name": "MySQL", "proficiency": 75 },
         { "name": "Redis", "proficiency": 70 },
         { "name": "Prisma", "proficiency": 80 },
-        { "name": "Mongoose", "proficiency": 85 }
+        { "name": "Mongoose", "proficiency": 85 },
+        { "name": "Laravel", "proficiency": 75 },
+        { "name": "Docker", "proficiency": 80 }
       ]
     },
     "otherSkills": [
+      "Java",
+      "Golang",
+      "Python",
+      "Git",
+      "shadcn",
       "Figma",
       "Postman",
       "VS Code",
@@ -259,7 +267,32 @@
       "React Query",
       "Socket.io",
       "JWT",
-      "OAuth"
+      "OAuth",
+      "Docker Compose",
+      "AWS",
+      "Microservices",
+      "GraphQL",
+      "WebSocket",
+      "PDF.js",
+      "html2canvas",
+      "MySQL Workbench",
+      "MongoDB Compass",
+      "Prisma Studio",
+      "REST Client",
+      "WebSocket Testing",
+      "API Testing",
+      "API Documentation",
+      "API Versioning",
+      "API Rate Limiting",
+      "API Security",
+      "API Authentication",
+      "API Authorization",
+      "API Error Handling",
+      "API Logging",
+      "API Monitoring",
+      "API Performance",
+      "API Scalability",
+      "API Reliability"
     ]
   },
   "contact": {
@@ -335,7 +368,7 @@
       "title": "Dear Hiring Manager",
       "greeting": "To Whom It May Concern"
     },
-    "opening": "I am writing to express my strong interest in the Full Stack Developer position at your esteemed organization. With over 3+ years of professional experience in building scalable web applications, including extensive work in Dubai's dynamic tech industry, I bring a proven track record of delivering enterprise-level solutions that drive business growth.",
+    "opening": "I am writing to express my strong interest in the Full Stack Developer position at your esteemed organization. With over 4 years of professional experience in building scalable web applications, including extensive work in Dubai's dynamic tech industry, I bring a proven track record of delivering enterprise-level solutions that drive business growth.",
     "body": [
       "Currently based in Dubai, UAE, I have been working with Chaturvedi Software House LLC since 2022, where I have successfully led multiple high-impact projects. My Dubai experience includes developing a comprehensive Real Estate Management System (Fincore RMS) - a multi-tenant SaaS platform serving the UAE property market, building AI-powered property marketplaces with integrations to Bayut and PropertyFinder, and creating ERP solutions for financial management. This regional expertise has given me deep insights into Middle Eastern business requirements, compliance standards, and market dynamics.",
       "My technical expertise spans the complete full-stack development spectrum. I excel in modern technologies including React 19, Next.js 15, TypeScript, Node.js, and various database systems (MySQL, MongoDB, PostgreSQL). In Dubai, I have independently built production-ready applications managing thousands of tenants and properties, implemented 55+ reusable UI components, developed role-based authentication systems for Admin/Tenant/Landlord access, and created comprehensive backend architectures with RESTful APIs and microservices. My experience includes handling complex requirements such as digital signatures, PDF generation, payment tracking, KYC document management, and third-party integrations.",

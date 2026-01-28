@@ -67,10 +67,10 @@ const SmoothScroll = ({ children }: SmoothScrollProps) => {
   return (
     <motion.div
       ref={containerRef}
-      className="relative overflow-x-hidden w-full max-w-[100vw] box-border"
+      className="relative overflow-x-hidden w-full max-w-[100vw] box-border min-h-full"
       style={{
         willChange: 'transform',
-        overscrollBehavior: 'none',
+        overscrollBehavior: 'auto',
         height: '100%',
         width: '100%',
         maxWidth: '100%',

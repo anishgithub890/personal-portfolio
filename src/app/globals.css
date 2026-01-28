@@ -59,6 +59,11 @@
     --xs-breakpoint: 480px;
   }
 
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+  }
+
   body {
     @apply bg-background text-foreground;
     /* Enhanced touch interactions */
@@ -69,6 +74,16 @@
     text-rendering: optimizeLegibility;
     -webkit-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
+  }
+
+  /* One-page scroll: section anchors land with space below fixed UI */
+  #home,
+  #about,
+  #skills,
+  #github,
+  #experience,
+  #contact {
+    scroll-margin-top: 1.5rem;
   }
   
   /* Allow text selection for content areas */
@@ -327,8 +342,8 @@
 /* Enhanced scroll animations with better performance */
 .scroll-fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(24px);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: opacity, transform;
   contain: layout style paint;
 }

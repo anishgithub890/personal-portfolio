@@ -68,15 +68,12 @@ export default function Sidebar({ className }: SidebarProps) {
         // Handle hash links for main page sections
         if (pathname !== '/') {
           // If we're not on the main page, navigate to main page first with hash
-          // This ensures users can access main page sections from any page
           await router.push('/' + href);
         } else {
-          // We're already on the main page, update URL and scroll to section
           const element = document.querySelector(href);
           if (element) {
-            // Update URL with hash
             window.history.pushState(null, '', href);
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
             setActiveSection(id);
           }
         }
@@ -110,7 +107,7 @@ export default function Sidebar({ className }: SidebarProps) {
           setTimeout(() => {
             const element = document.querySelector(hash);
             if (element) {
-              element.scrollIntoView({ behavior: 'smooth' });
+              element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
             }
           }, 100);
         }
@@ -160,36 +157,42 @@ export default function Sidebar({ className }: SidebarProps) {
   useEffect(() => {
     if (!isClient) return;
     
+    let ticking = false;
     const handleScroll = () => {
-      // Only handle scroll on main page
       if (pathname !== '/') return;
-      
-      const sections = navigationItems
-        .filter(item => item.href.startsWith('#')) // Only include hash links for scroll detection
-        .map(item => ({
-          id: item.id,
-          element: document.querySelector(item.href)
-        })).filter(section => section.element);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const sections = navigationItems
+          .filter(item => item.href.startsWith('#'))
+          .map(item => ({
+            id: item.id,
+            element: document.querySelector(item.href)
+          })).filter(section => section.element);
 
-      if (sections.length === 0) return;
+        if (sections.length === 0) {
+          ticking = false;
+          return;
+        }
 
-      const scrollPosition = window.scrollY + 100;
+        const scrollPosition = window.scrollY + 100;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section.element) {
-          const elementTop = (section.element as HTMLElement).offsetTop;
-          if (scrollPosition >= elementTop) {
-            // Update active section and URL
-            setActiveSection(section.id);
-            const newHash = navigationItems.find(item => item.id === section.id)?.href;
-            if (newHash && window.location.hash !== newHash) {
-              window.history.replaceState(null, '', newHash);
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const section = sections[i];
+          if (section.element) {
+            const elementTop = (section.element as HTMLElement).offsetTop;
+            if (scrollPosition >= elementTop) {
+              setActiveSection(section.id);
+              const newHash = navigationItems.find(item => item.id === section.id)?.href;
+              if (newHash && window.location.hash !== newHash) {
+                window.history.replaceState(null, '', newHash);
+              }
+              break;
             }
-            break;
           }
         }
-      }
+        ticking = false;
+      });
     };
 
     // Handle browser back/forward navigation
@@ -203,7 +206,7 @@ export default function Sidebar({ className }: SidebarProps) {
           setActiveSection(navItem.id);
           const element = document.querySelector(hash);
           if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
           }
         }
       } else {
@@ -212,9 +215,8 @@ export default function Sidebar({ className }: SidebarProps) {
       }
     };
 
-    // Only add scroll listener if we're on the main page
     if (pathname === '/') {
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll, { passive: true });
       window.addEventListener('popstate', handlePopState);
       return () => {
         window.removeEventListener('scroll', handleScroll);

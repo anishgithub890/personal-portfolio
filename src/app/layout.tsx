@@ -45,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable}`} style={{ scrollBehavior: 'smooth' }}>
+    <html lang="en" className={`${geist.variable} ${geistMono.variable} scroll-smooth`}>
       <body className="min-h-screen bg-background font-sans antialiased">
         <Providers>
           <div className="flex min-h-screen">

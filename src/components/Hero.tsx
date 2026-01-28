@@ -50,15 +50,9 @@ const Hero = () => {
   
   const scrollToSection = (sectionId: string) => {
     if (typeof window === 'undefined') return;
-    
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerHeight = 64;
-      const elementTop = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: elementTop,
-        behavior: 'smooth'
-      });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
     }
   };
 

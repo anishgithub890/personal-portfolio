@@ -154,7 +154,7 @@ export default function Home() {
 
   return (
     <SmoothScroll>
-      <div className="min-h-screen w-full bg-background page-transition overflow-hidden">
+      <div className="min-h-screen w-full bg-background page-transition overflow-x-hidden">
         {/* Floating Cursor Effect */}
         <FloatingCursor />
         
@@ -165,7 +165,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="w-full max-w-full overflow-x-hidden"
+            className="w-full max-w-full overflow-x-hidden scroll-smooth"
             style={{ maxWidth: '100%', overflowX: 'hidden' }}
           >
             <div id="home" className={visibleSections.has('home') ? 'scroll-fade-in visible' : 'scroll-fade-in'}>

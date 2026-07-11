@@ -1,41 +1,44 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import Providers from '@/components/Providers';
-import Sidebar from '@/components/Sidebar';
+import Providers from "@/components/Providers";
+import Sidebar from "@/components/Sidebar";
 
-const geist = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Anish Mahato - Full Stack Developer",
-  description: "Professional portfolio of Anish Mahato, a passionate Full Stack Developer specializing in modern web technologies.",
-  keywords: ["Full Stack Developer", "React", "Next.js", "TypeScript", "MongoDB", "Portfolio"],
-  authors: [{ name: "Anish Mahato" }],
-  creator: "Anish Mahato",
+  title: "Anish Mahato | Full Stack Engineer",
+  description:
+    "Portfolio of Anish Mahato, a full stack engineer building fast, scalable, high-quality web products.",
+  keywords: [
+    "Anish Mahato",
+    "Full Stack Engineer",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Portfolio",
+  ],
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://anishmahato.dev",
-    title: "Anish Mahato - Full Stack Developer",
-    description: "Professional portfolio of Anish Mahato, a passionate Full Stack Developer specializing in modern web technologies.",
+    title: "Anish Mahato | Full Stack Engineer",
+    description:
+      "Portfolio of Anish Mahato, a full stack engineer building fast, scalable, high-quality web products.",
     siteName: "Anish Mahato Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anish Mahato - Full Stack Developer",
-    description: "Professional portfolio of Anish Mahato, a passionate Full Stack Developer specializing in modern web technologies.",
-  },
-  robots: {
-    index: true,
-    follow: true,
+    title: "Anish Mahato | Full Stack Engineer",
+    description:
+      "Portfolio of Anish Mahato, a full stack engineer building fast, scalable, high-quality web products.",
   },
 };
 
@@ -45,16 +48,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${geistMono.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-background font-sans antialiased">
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${ibmPlexMono.variable} scroll-smooth`}
+    >
+      <body className="font-[var(--font-space-grotesk)]">
         <Providers>
-          <div className="flex min-h-screen">
+          <div className="page-shell">
             <Sidebar />
-            <div className="flex-1 md:ml-56 lg:ml-64 max-w-full overflow-x-hidden">
-              <main className="pt-0 max-w-full overflow-x-hidden pr-0 md:pr-2 lg:pr-4">
-                {children}
-              </main>
+            <div className="pointer-events-none fixed inset-0 opacity-70">
+              <div className="grid-shell h-full w-full" />
             </div>
+            <main className="relative min-h-screen md:ml-[288px]">{children}</main>
           </div>
         </Providers>
       </body>

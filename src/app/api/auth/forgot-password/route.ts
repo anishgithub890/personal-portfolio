@@ -1,11 +1,11 @@
-import { NextRequest, NextResponse } from 'next/server';
-import crypto from 'crypto';
-import nodemailer from 'nodemailer';
-import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from "next/server";
+import crypto from "crypto";
+import nodemailer from "nodemailer";
+import { prisma } from "@/lib/prisma";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || '587'),
+  port: parseInt(process.env.SMTP_PORT || "587"),
   secure: false,
   auth: {
     user: process.env.SMTP_USERNAME,
@@ -18,29 +18,23 @@ export async function POST(request: NextRequest) {
     const { email } = await request.json();
 
     if (!email) {
-      return NextResponse.json(
-        { error: 'Email is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Email is required" }, { status: 400 });
     }
 
     const user = await prisma.user.findUnique({
-      where: { email }
+      where: { email },
     });
-    
+
     if (!user) {
-      return NextResponse.json(
-        { error: 'User not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     // Generate reset token
-    const resetToken = crypto.randomBytes(32).toString('hex');
+    const resetToken = crypto.randomBytes(32).toString("hex");
     const resetPasswordToken = crypto
-      .createHash('sha256')
+      .createHash("sha256")
       .update(resetToken)
-      .digest('hex');
+      .digest("hex");
 
     // Set token expiry (1 hour)
     const resetPasswordExpires = new Date(Date.now() + 60 * 60 * 1000);
@@ -51,7 +45,7 @@ export async function POST(request: NextRequest) {
       data: {
         resetPasswordToken,
         resetPasswordExpires,
-      }
+      },
     });
 
     // Send email
@@ -60,7 +54,7 @@ export async function POST(request: NextRequest) {
     const mailOptions = {
       from: process.env.SMTP_FROM_EMAIL,
       to: email,
-      subject: 'Password Reset Request',
+      subject: "Password Reset Request",
       html: `
         <h1>Password Reset Request</h1>
         <p>You requested a password reset. Click the link below to reset your password:</p>
@@ -73,14 +67,17 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
-      { message: 'Password reset email sent' },
-      { status: 200 }
+      { message: "Password reset email sent" },
+      { status: 200 },
     );
   } catch (error) {
-    console.error('Forgot password error:', error);
+    console.error("Forgot password error:", error);
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      {
+        error:
+          "Authentication service temporarily unavailable. Please try again later.",
+      },
+      { status: 503 },
     );
   }
-} 
+}

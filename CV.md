@@ -1,8 +1,8 @@
-# Anish Mahato - Full Stack Developer
+# Anish Mahato - Full Stack Engineer
 
 ## Career Summary
 
-I'm a dedicated Full Stack Developer with 3+ years of experience creating exceptional digital experiences. With expertise in modern web technologies, I specialize in building scalable applications that solve real-world problems.
+I'm a dedicated Full Stack Engineer with 3+ years of experience creating exceptional digital experiences. With expertise in modern web technologies, I specialize in building scalable applications that solve real-world problems.
 
 My journey in software development started with a curiosity about how things work on the web, which has evolved into a deep understanding of both frontend and backend technologies. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.
 
@@ -42,7 +42,7 @@ Currently based in Dubai, UAE, I have been working with Chaturvedi Software Hous
 
 ## Current Responsibilities
 
-### Full Stack Developer - HRMS & CRM System
+### Full Stack Engineer - HRMS & CRM System
 **Chaturvedi Software House LLC, Dubai, UAE** | 2025 - Present
 
 - **Architecture & Design**: Designed and implemented multi-tenant SaaS architecture with 3-tier hierarchy (Super Admin → Company Admin → Users) and complete data isolation
@@ -75,7 +75,7 @@ Currently based in Dubai, UAE, I have been working with Chaturvedi Software Hous
 
 - **Super Admin Panel**: Built super admin panel for company and license management with advanced navigation using Shadcn UI patterns
 
-### Full Stack Developer - Frontend & Backend Lead
+### Full Stack Engineer - Frontend & Backend Lead
 **Chaturvedi Software House LLC, Dubai, UAE** | 2025 - Present
 
 - **Property Marketplace**: Built comprehensive property marketplace with broker directory and transaction management
@@ -84,7 +84,7 @@ Currently based in Dubai, UAE, I have been working with Chaturvedi Software Hous
 - **Admin Panel**: Created admin panel with bulk actions, property imports, and social collaboration features
 - **Team Collaboration**: Collaborated with frontend team while owning full backend development independently
 
-### Full Stack Developer - Real Estate Management System
+### Full Stack Engineer - Real Estate Management System
 **Chaturvedi Software House LLC, Dubai, UAE** | 2025 - Present
 
 - **Multi-tenant SaaS Platform**: Built complete multi-tenant SaaS Real Estate Management System with role-based authentication (Admin, Tenant, Landlord)

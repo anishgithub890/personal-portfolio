@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
-import crypto from 'crypto';
-import bcrypt from 'bcryptjs';
-import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from "next/server";
+import crypto from "crypto";
+import bcrypt from "bcryptjs";
+import { prisma } from "@/lib/prisma";
 
 export async function POST(request: NextRequest) {
   try {
@@ -9,37 +9,37 @@ export async function POST(request: NextRequest) {
 
     if (!token || !password) {
       return NextResponse.json(
-        { error: 'Token and password are required' },
-        { status: 400 }
+        { error: "Token and password are required" },
+        { status: 400 },
       );
     }
 
     if (password.length < 6) {
       return NextResponse.json(
-        { error: 'Password must be at least 6 characters long' },
-        { status: 400 }
+        { error: "Password does not meet the security requirements" },
+        { status: 400 },
       );
     }
 
     // Hash the token
     const resetPasswordToken = crypto
-      .createHash('sha256')
+      .createHash("sha256")
       .update(token)
-      .digest('hex');
+      .digest("hex");
 
     const user = await prisma.user.findFirst({
       where: {
         resetPasswordToken,
         resetPasswordExpires: {
-          gt: new Date()
-        }
-      }
+          gt: new Date(),
+        },
+      },
     });
 
     if (!user) {
       return NextResponse.json(
-        { error: 'Invalid or expired reset token' },
-        { status: 400 }
+        { error: "Invalid or expired reset token" },
+        { status: 400 },
       );
     }
 
@@ -53,18 +53,21 @@ export async function POST(request: NextRequest) {
         password: hashedPassword,
         resetPasswordToken: null,
         resetPasswordExpires: null,
-      }
+      },
     });
 
     return NextResponse.json(
-      { message: 'Password reset successfully' },
-      { status: 200 }
+      { message: "Password reset successfully" },
+      { status: 200 },
     );
   } catch (error) {
-    console.error('Reset password error:', error);
+    console.error("Reset password error:", error);
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      {
+        error:
+          "Authentication service temporarily unavailable. Please try again later.",
+      },
+      { status: 503 },
     );
   }
-} 
+}

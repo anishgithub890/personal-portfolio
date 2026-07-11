@@ -77,7 +77,7 @@ const sampleProjects = [
 const sampleExperience = [
   {
     company: 'TechCorp Solutions',
-    position: 'Senior Full Stack Developer',
+    position: 'Senior Full Stack Engineer',
     description: 'Leading development of enterprise web applications using React, Node.js, and MongoDB. Mentoring junior developers and implementing best practices for code quality and performance.',
     startDate: new Date('2023-01-01'),
     current: true,
@@ -86,7 +86,7 @@ const sampleExperience = [
   },
   {
     company: 'InnovateWeb',
-    position: 'Full Stack Developer',
+    position: 'Full Stack Engineer',
     description: 'Developed and maintained multiple client websites and web applications. Collaborated with design and product teams to deliver high-quality user experiences.',
     startDate: new Date('2021-01-01'),
     endDate: new Date('2023-01-01'),

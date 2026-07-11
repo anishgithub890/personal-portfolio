@@ -214,7 +214,7 @@ export async function sendMessageNotification(
         <!-- Footer -->
         <div style="background-color: #f5f7fa; padding: 20px; text-align: center; border-top: 1px solid #e1e4e8;">
           <p style="margin: 0; color: #666; font-size: 14px;">
-            © ${new Date().getFullYear()} Anish Mahato | Full Stack Developer
+            © ${new Date().getFullYear()} Anish Mahato | Full Stack Engineer
           </p>
         </div>
       </div>

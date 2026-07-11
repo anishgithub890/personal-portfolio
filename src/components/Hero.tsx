@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useTransform, useSpring, useInView } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Mail, Download, Play, FileText } from 'lucide-react';
+import { ArrowDown, Mail, Play } from 'lucide-react';
 import { getHeroContent } from '@/lib/portfolio-content';
 import Image from 'next/image';
 import { useEffect, useState, useRef } from 'react';
@@ -176,7 +176,7 @@ const Hero = () => {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src="/thumbnail_profile.jpg"
+                  src="/thumbnail_profile.png"
                   alt="Profile"
                   fill
                   className="object-cover"
@@ -303,15 +303,6 @@ const Hero = () => {
               >
                 <Mail className="mr-2" size={18} />
                 {heroContent.buttons.secondary}
-              </Button>
-              <Button
-                variant="secondary"
-                size="lg"
-                className="w-full xs:w-auto text-sm xs:text-base sm:text-lg px-4 sm:px-8 py-5 sm:py-6 btn-interactive transition-smooth"
-                onClick={() => window.open('/cv', '_blank')}
-              >
-                <FileText className="mr-2" size={18} />
-                View CV
               </Button>
             </motion.div>
 

@@ -1,5 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
 export async function POST(request: NextRequest) {
   try {
@@ -7,8 +7,8 @@ export async function POST(request: NextRequest) {
 
     if (!email || !otp) {
       return NextResponse.json(
-        { error: 'Email and OTP are required' },
-        { status: 400 }
+        { error: "Email and OTP are required" },
+        { status: 400 },
       );
     }
 
@@ -17,15 +17,15 @@ export async function POST(request: NextRequest) {
         email,
         otpCode: otp,
         otpExpires: {
-          gt: new Date()
-        }
-      }
+          gt: new Date(),
+        },
+      },
     });
 
     if (!user) {
       return NextResponse.json(
-        { error: 'Invalid or expired OTP' },
-        { status: 400 }
+        { error: "Invalid or expired OTP" },
+        { status: 400 },
       );
     }
 
@@ -35,18 +35,21 @@ export async function POST(request: NextRequest) {
       data: {
         otpCode: null,
         otpExpires: null,
-      }
+      },
     });
 
     return NextResponse.json(
-      { message: 'OTP verified successfully', userId: user.id },
-      { status: 200 }
+      { message: "OTP verified successfully", userId: user.id },
+      { status: 200 },
     );
   } catch (error) {
-    console.error('Verify OTP error:', error);
+    console.error("Verify OTP error:", error);
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      {
+        error:
+          "Authentication service temporarily unavailable. Please try again later.",
+      },
+      { status: 503 },
     );
   }
-} 
+}

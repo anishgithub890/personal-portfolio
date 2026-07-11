@@ -79,7 +79,7 @@ export default function SignUp() {
     }
 
     if (formData.password.length < 6) {
-      setError('Password must be at least 6 characters long');
+      setError('Password does not meet the security requirements');
       setIsLoading(false);
       return;
     }

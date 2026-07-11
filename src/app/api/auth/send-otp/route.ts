@@ -1,10 +1,10 @@
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import { prisma } from "@/lib/prisma";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || '587'),
+  port: parseInt(process.env.SMTP_PORT || "587"),
   secure: false,
   auth: {
     user: process.env.SMTP_USERNAME,
@@ -17,26 +17,20 @@ export async function POST(request: NextRequest) {
     const { email } = await request.json();
 
     if (!email) {
-      return NextResponse.json(
-        { error: 'Email is required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Email is required" }, { status: 400 });
     }
 
     const user = await prisma.user.findUnique({
-      where: { email }
+      where: { email },
     });
-    
+
     if (!user) {
-      return NextResponse.json(
-        { error: 'User not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     // Generate 4-digit OTP
     const otpCode = Math.floor(1000 + Math.random() * 9000).toString();
-    
+
     // Set OTP expiry (1 minute)
     const otpExpires = new Date(Date.now() + 60 * 1000);
 
@@ -46,14 +40,14 @@ export async function POST(request: NextRequest) {
       data: {
         otpCode,
         otpExpires,
-      }
+      },
     });
 
     // Send email with OTP
     const mailOptions = {
       from: process.env.SMTP_FROM_EMAIL,
       to: email,
-      subject: 'Password Reset OTP',
+      subject: "Password Reset OTP",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333;">Password Reset Verification</h2>
@@ -69,28 +63,34 @@ export async function POST(request: NextRequest) {
       `,
     };
 
-    console.log('Sending email to:', email);
+    console.log("Sending email to:", email);
     const result = await transporter.sendMail(mailOptions);
-    console.log('Email sent successfully:', result.messageId);
+    console.log("Email sent successfully:", result.messageId);
 
     return NextResponse.json(
-      { message: 'OTP sent successfully' },
-      { status: 200 }
+      { message: "OTP sent successfully" },
+      { status: 200 },
     );
   } catch (error) {
-    console.error('Send OTP error:', error);
-    
+    console.error("Send OTP error:", error);
+
     // Check if it's an email sending error
-    if (error instanceof Error && error.message.includes('SMTP')) {
+    if (error instanceof Error && error.message.includes("SMTP")) {
       return NextResponse.json(
-        { error: 'Email service temporarily unavailable. Please try again later.' },
-        { status: 503 }
+        {
+          error:
+            "Email service temporarily unavailable. Please try again later.",
+        },
+        { status: 503 },
       );
     }
-    
+
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      {
+        error:
+          "Authentication service temporarily unavailable. Please try again later.",
+      },
+      { status: 503 },
     );
   }
-} 
+}

@@ -1,408 +1,255 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { useSession, signOut } from 'next-auth/react';
-import { useRouter, usePathname } from 'next/navigation';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
-import AuthDialog from '@/components/AuthDialog';
-import { cn } from '@/lib/utils';
-import { 
-  Home, 
-  User, 
-  Code, 
-  Briefcase, 
-  Mail, 
-  Menu,
+import { useEffect, useMemo, useState } from "react";
+import { useSession, signOut } from "next-auth/react";
+import { usePathname } from "next/navigation";
+import {
+  Briefcase,
   Github,
+  Home,
   Linkedin,
-  MessageCircle,
   LogIn,
   LogOut,
-  UserCircle,
-  MessageSquare,
-  FileText
-} from 'lucide-react';
+  Mail,
+  Menu,
+  User,
+  Wrench,
+  X,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import AuthDialog from "@/components/AuthDialog";
+import { cn } from "@/lib/utils";
 
-interface SidebarProps {
-  className?: string;
-}
+const navigationItems = [
+  { id: "home", label: "Home", href: "#home", icon: Home },
+  { id: "about", label: "About", href: "#about", icon: User },
+  { id: "skills", label: "Skills", href: "#skills", icon: Wrench },
+  {
+    id: "experience",
+    label: "Experience",
+    href: "#experience",
+    icon: Briefcase,
+  },
+  { id: "contact", label: "Contact", href: "#contact", icon: Mail },
+];
 
-export default function Sidebar({ className }: SidebarProps) {
-  const [activeSection, setActiveSection] = useState<string>('');
-  const [isNavigating, setIsNavigating] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  const { data: session } = useSession();
-  const router = useRouter();
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/anishgithub890", icon: Github },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/anishpabe",
+    icon: Linkedin,
+  },
+  { label: "Email", href: "mailto:anishgithub890@gmail.com", icon: Mail },
+];
+
+export default function Sidebar() {
   const pathname = usePathname();
+  const { data: session } = useSession();
+  const [activeSection, setActiveSection] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Ensure we're on the client before setting any state
+  const sectionIds = useMemo(
+    () =>
+      navigationItems
+        .filter((item) => item.href.startsWith("#"))
+        .map((item) => item.id),
+    [],
+  );
+
   useEffect(() => {
-    setIsClient(true);
-  }, []);
+    if (pathname !== "/") return;
 
-  const navigationItems = [
-    { id: 'home', label: 'Home', href: '#home', icon: Home },
-    { id: 'about', label: 'About', href: '#about', icon: User },
-    { id: 'skills', label: 'Skills', href: '#skills', icon: Code },
-    { id: 'experience', label: 'Experience', href: '#experience', icon: Briefcase },
-    { id: 'contact', label: 'Contact', href: '#contact', icon: Mail },
-    { id: 'cv', label: 'CV', href: '/cv', icon: FileText },
-  ];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((element): element is HTMLElement => Boolean(element));
 
-  // Add admin-specific navigation items only for logged-in admin users
-  const adminNavigationItems = session?.user?.userType === 'ADMIN' ? [
-    { id: 'admin-contacts', label: 'Manage Contacts', href: '/admin/dashboard', icon: MessageSquare },
-  ] : [];
+    if (sections.length === 0) return;
 
-  const allNavigationItems = [...navigationItems, ...adminNavigationItems];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-  const scrollToSection = async (href: string, id: string) => {
-    setIsNavigating(true);
-    
-    try {
-      // Check if it's a hash link (starts with #) or a regular link
-      if (href.startsWith('#')) {
-        // Handle hash links for main page sections
-        if (pathname !== '/') {
-          // If we're not on the main page, navigate to main page first with hash
-          await router.push('/' + href);
-        } else {
-          const element = document.querySelector(href);
-          if (element) {
-            window.history.pushState(null, '', href);
-            element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-            setActiveSection(id);
-          }
+        if (visible?.target?.id) {
+          setActiveSection(visible.target.id);
         }
-      } else {
-        // Handle regular navigation links (like dashboard pages)
-        await router.push(href);
+      },
+      {
+        rootMargin: "-20% 0px -55% 0px",
+        threshold: [0.15, 0.4, 0.7],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [pathname, sectionIds]);
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      const current = navigationItems.find((item) => item.href === pathname);
+      if (current) {
+        setActiveSection(current.id);
       }
-    } finally {
-      setIsNavigating(false);
+    }
+  }, [pathname]);
+
+  const handleNavClick = (href: string, id: string) => {
+    setMobileOpen(false);
+
+    if (!href.startsWith("#")) {
+      setActiveSection(id);
+      return;
+    }
+
+    if (pathname !== "/") {
+      window.location.href = `/${href}`;
+      return;
+    }
+
+    const element = document.getElementById(id);
+    if (element) {
+      setActiveSection(id);
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", href);
     }
   };
 
-  // Set active section based on current page
-  useEffect(() => {
-    if (!isClient) return;
-    
-    // Check if we're on a specific page
-    if (pathname === '/admin/dashboard') {
-      setActiveSection('admin-contacts');
-    } else if (pathname === '/dashboard') {
-      setActiveSection('dashboard');
-    } else if (pathname === '/') {
-      // We're on the main page, check for hash in URL
-      const hash = window.location.hash;
-      if (hash) {
-        // Find the corresponding navigation item
-        const navItem = navigationItems.find(item => item.href === hash);
-        if (navItem) {
-          setActiveSection(navItem.id);
-          // Scroll to the section after a small delay
-          setTimeout(() => {
-            const element = document.querySelector(hash);
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-            }
-          }, 100);
-        }
-      } else {
-        // No hash, set default to home and update URL
-        setActiveSection('home');
-        if (window.location.hash !== '') {
-          window.history.replaceState(null, '', '/');
-        }
-        // Let scroll detection handle it
-        const hasHashLinks = navigationItems.some(item => item.href.startsWith('#'));
-        if (hasHashLinks) {
-          // Check initial scroll position for main page
-          const handleInitialScroll = () => {
-            const sections = navigationItems
-              .filter(item => item.href.startsWith('#'))
-              .map(item => ({
-                id: item.id,
-                element: document.querySelector(item.href)
-              }))
-              .filter(section => section.element);
-
-            if (sections.length === 0) return;
-
-            const scrollPosition = window.scrollY + 100;
-
-            for (let i = sections.length - 1; i >= 0; i--) {
-              const section = sections[i];
-              if (section.element) {
-                const elementTop = (section.element as HTMLElement).offsetTop;
-                if (scrollPosition >= elementTop) {
-                  setActiveSection(section.id);
-                  break;
-                }
-              }
-            }
-          };
-          
-          // Small delay to ensure DOM is ready
-          setTimeout(handleInitialScroll, 100);
-        }
-      }
-    }
-  }, [pathname, isClient]);
-
-  // Add scroll detection for main page
-  useEffect(() => {
-    if (!isClient) return;
-    
-    let ticking = false;
-    const handleScroll = () => {
-      if (pathname !== '/') return;
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const sections = navigationItems
-          .filter(item => item.href.startsWith('#'))
-          .map(item => ({
-            id: item.id,
-            element: document.querySelector(item.href)
-          })).filter(section => section.element);
-
-        if (sections.length === 0) {
-          ticking = false;
-          return;
-        }
-
-        const scrollPosition = window.scrollY + 100;
-
-        for (let i = sections.length - 1; i >= 0; i--) {
-          const section = sections[i];
-          if (section.element) {
-            const elementTop = (section.element as HTMLElement).offsetTop;
-            if (scrollPosition >= elementTop) {
-              setActiveSection(section.id);
-              const newHash = navigationItems.find(item => item.id === section.id)?.href;
-              if (newHash && window.location.hash !== newHash) {
-                window.history.replaceState(null, '', newHash);
-              }
-              break;
-            }
-          }
-        }
-        ticking = false;
-      });
-    };
-
-    // Handle browser back/forward navigation
-    const handlePopState = () => {
-      if (pathname !== '/') return;
-      
-      const hash = window.location.hash;
-      if (hash) {
-        const navItem = navigationItems.find(item => item.href === hash);
-        if (navItem) {
-          setActiveSection(navItem.id);
-          const element = document.querySelector(hash);
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-          }
-        }
-      } else {
-        setActiveSection('home');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    };
-
-    if (pathname === '/') {
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      window.addEventListener('popstate', handlePopState);
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-        window.removeEventListener('popstate', handlePopState);
-      };
-    }
-  }, [pathname, isClient]);
-
-  const SidebarContent = () => (
-    <div className="flex flex-col h-full">
-      {/* Header */}
-      <div className="p-3 xxs:p-4 pb-2 xxs:pb-3">
-        <div className="flex items-center gap-2 xxs:gap-3 mb-1.5 xxs:mb-2">
-          <div className="w-6 h-6 xxs:w-8 xxs:h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-xs xxs:text-sm">A</span>
-          </div>
-          <div>
-            <h2 className="text-xs xxs:text-sm font-bold text-foreground">
-              Anish Mahato
-            </h2>
-            <p className="text-[10px] xxs:text-xs text-muted-foreground">
-              Full Stack Dev
-            </p>
-          </div>
-        </div>
-        <Badge variant="secondary" className="text-xs">
-          Available
-        </Badge>
-      </div>
-
-      <div className="mx-4 h-px bg-border/30" />
-
-      {/* Navigation */}
-      <div className="flex-1 px-2 py-3">
-        <nav className="space-y-1">
-            {allNavigationItems.map((item) => {
+  const navBody = (
+    <div className="panel flex h-full min-h-0 flex-col overflow-hidden">
+      <div className="flex-1 min-h-0 space-y-8 overflow-y-auto overscroll-contain p-6 pt-16 md:pt-6">
+        <div>
+          <nav className="space-y-2">
+            {navigationItems.map((item) => {
               const Icon = item.icon;
-              const isActive = isClient && activeSection === item.id;
-              const isCurrentPage = isClient && item.href.startsWith('/') && pathname === item.href;
-              const isLoading = isNavigating && (isActive || isCurrentPage);
-              
+              const isActive = item.href.startsWith("#")
+                ? pathname === "/" && activeSection === item.id
+                : pathname === item.href;
+
               return (
-                <button
+                <a
                   key={item.id}
-                  disabled={isNavigating}
+                  href={item.href}
+                  onClick={(event) => {
+                    if (item.href.startsWith("#")) {
+                      event.preventDefault();
+                    }
+                    handleNavClick(item.href, item.id);
+                  }}
                   className={cn(
-                    "w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ease-in-out",
-                    isActive || isCurrentPage
-                      ? "bg-primary/10 text-primary border border-primary/20 shadow-sm" 
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
-                    isNavigating ? 'opacity-50 cursor-not-allowed' : ''
+                    "group flex items-center justify-between rounded-2xl border px-4 py-3 text-sm",
+                    isActive
+                      ? "border-primary/35 bg-primary/12 text-white"
+                      : "border-white/8 bg-white/[0.02] text-muted-foreground hover:border-white/15 hover:bg-white/[0.05] hover:text-white",
                   )}
-                  onClick={() => scrollToSection(item.href, item.id)}
                 >
-                  {isLoading ? (
-                    <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                  ) : (
+                  <span className="flex items-center gap-3">
                     <Icon className="h-4 w-4" />
-                  )}
-                  <span>{item.label}</span>
-                </button>
+                    {item.label}
+                  </span>
+                  <span className="font-[var(--font-ibm-plex-mono)] text-[11px] text-muted-foreground group-hover:text-primary">
+                    0{navigationItems.indexOf(item) + 1}
+                  </span>
+                </a>
               );
             })}
-        </nav>
-      </div>
-
-      <div className="mx-4 h-px bg-border/30" />
-
-      {/* Social Links */}
-      <div className="p-4 pt-3">
-        <h3 className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">
-          Connect
-        </h3>
-        <div className="flex gap-1.5 mb-3">
-          {socialLinks.map((social) => {
-            const Icon = social.icon;
-            return (
-              <Button
-                key={social.name}
-                variant="ghost"
-                size="sm"
-                className={cn("h-7 w-7 p-0", social.color)}
-                onClick={() => window.open(social.href, '_blank')}
-              >
-                <Icon className="h-3.5 w-3.5" />
-              </Button>
-            );
-          })}
+          </nav>
         </div>
-        <div className="space-y-2 text-xs">
-          <a 
-            href="mailto:anishgithub890@gmail.com" 
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-            title="Email: anishgithub890@gmail.com"
-          >
-            <Mail className="h-3 w-3" />
-            <span className="truncate">anishgithub890@gmail.com</span>
-          </a>
-          <a 
-            href="https://wa.me/971508572468" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-            title="WhatsApp: +971508572468"
-          >
-            <MessageCircle className="h-3 w-3" />
-            <span>+971508572468</span>
-          </a>
+
+        <div>
+          <div className="grid grid-cols-1 gap-2">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-3 rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-3 text-sm text-muted-foreground hover:border-white/15 hover:bg-white/[0.05] hover:text-white"
+                >
+                  <Icon className="h-4 w-4" />
+                  {social.label}
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="p-4 pt-3 mt-auto">
+      <div className="border-t border-white/10 p-6">
         {session ? (
           <div className="space-y-3">
-            <div className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-muted/50">
-              <UserCircle className="h-4 w-4 text-primary" />
-              <div className="flex-1 min-w-0">
-                <p className="text-xs font-medium text-foreground truncate">
-                  {session.user?.name}
-                </p>
-                <p className="text-xs text-muted-foreground truncate">
-                  {session.user?.email}
-                </p>
-              </div>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
+              <p className="text-sm font-medium text-white">
+                {session.user?.name}
+              </p>
+              <p className="mt-1 truncate text-xs text-muted-foreground">
+                {session.user?.email}
+              </p>
             </div>
             <Button
               variant="outline"
-              size="sm"
-              className="w-full justify-center gap-2 text-xs h-auto min-h-[36px] sm:min-h-[44px]"
-              onClick={() => signOut({ callbackUrl: '/' })}
+              className="w-full justify-center rounded-2xl border-white/12 bg-transparent text-white hover:bg-white/5"
+              onClick={() => signOut({ callbackUrl: "/" })}
             >
-              <LogOut className="h-3.5 w-3.5" />
-              <span>Sign Out</span>
+              <LogOut className="h-4 w-4" />
+              Sign Out
             </Button>
           </div>
         ) : (
           <AuthDialog>
             <Button
               variant="outline"
-              size="sm"
-              className="w-full justify-center gap-2 text-xs h-auto min-h-[36px] sm:min-h-[44px]"
+              className="w-full justify-center rounded-2xl border-white/12 bg-transparent text-white hover:bg-white/5"
             >
-              <LogIn className="h-3.5 w-3.5" />
-              <span>Sign In</span>
+              <LogIn className="h-4 w-4" />
+              Sign In
             </Button>
           </AuthDialog>
         )}
-        <p className="text-xs text-muted-foreground text-center mt-2">
-          © 2024 AM
-        </p>
       </div>
     </div>
   );
 
-  const socialLinks = [
-    { name: 'GitHub', icon: Github, href: 'https://github.com/anishgithub890', color: 'hover:text-gray-400' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/anishpabe', color: 'hover:text-blue-400' },
-    { name: 'WhatsApp', icon: MessageCircle, href: 'https://wa.me/971508572468', color: 'hover:text-green-400' },
-  ];
-
   return (
     <>
-      {/* Mobile Sidebar */}
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="print:hidden fixed top-2 xxs:top-3 sm:top-4 left-2 xxs:left-3 sm:left-4 z-50 md:hidden bg-background/80 backdrop-blur-sm border border-border/50 h-8 w-8 xxs:h-10 xxs:w-10"
-          >
-            <Menu className="h-4 w-4 xxs:h-5 xxs:w-5 sm:h-6 sm:w-6" />
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="left" className="w-[80vw] max-w-[300px] xxs:max-w-[320px] p-0">
-          <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-          <div className="h-full w-full bg-background">
-            <SidebarContent />
-          </div>
-        </SheetContent>
-      </Sheet>
+      <button
+        type="button"
+        onClick={() => setMobileOpen(true)}
+        className="fixed left-4 top-4 z-50 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/35 text-white backdrop-blur md:hidden"
+        aria-label="Open navigation"
+      >
+        <Menu className="h-5 w-5" />
+      </button>
 
-      {/* Desktop Sidebar */}
-      <div className="print:hidden hidden md:block fixed left-0 top-0 h-full w-56 lg:w-64 z-50 bg-background border-r">
-        <SidebarContent />
-      </div>
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:hidden"
+          onClick={() => setMobileOpen(false)}
+        >
+          <div
+            className="absolute inset-y-0 left-0 w-[88vw] max-w-sm p-3"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setMobileOpen(false)}
+              className="absolute right-6 top-6 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur"
+              aria-label="Close navigation"
+            >
+              <X className="h-4 w-4" />
+            </button>
+            {navBody}
+          </div>
+        </div>
+      )}
+
+      <aside className="fixed inset-y-0 left-0 z-40 hidden w-[288px] p-5 md:block">
+        {navBody}
+      </aside>
     </>
   );
-} 
+}

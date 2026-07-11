@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
-import bcrypt from 'bcryptjs';
-import { prisma } from '@/lib/prisma';
+import { NextRequest, NextResponse } from "next/server";
+import bcrypt from "bcryptjs";
+import { prisma } from "@/lib/prisma";
 
 export async function POST(request: NextRequest) {
   try {
@@ -8,27 +8,24 @@ export async function POST(request: NextRequest) {
 
     if (!email || !password) {
       return NextResponse.json(
-        { error: 'Email and password are required' },
-        { status: 400 }
+        { error: "Email and password are required" },
+        { status: 400 },
       );
     }
 
     if (password.length < 6) {
       return NextResponse.json(
-        { error: 'Password must be at least 6 characters long' },
-        { status: 400 }
+        { error: "Password does not meet the security requirements" },
+        { status: 400 },
       );
     }
 
     const user = await prisma.user.findUnique({
-      where: { email }
+      where: { email },
     });
 
     if (!user) {
-      return NextResponse.json(
-        { error: 'User not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
 
     // Hash new password
@@ -43,18 +40,21 @@ export async function POST(request: NextRequest) {
         resetPasswordExpires: null,
         otpCode: null,
         otpExpires: null,
-      }
+      },
     });
 
     return NextResponse.json(
-      { message: 'Password reset successfully' },
-      { status: 200 }
+      { message: "Password reset successfully" },
+      { status: 200 },
     );
   } catch (error) {
-    console.error('Reset password OTP error:', error);
+    console.error("Reset password OTP error:", error);
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      {
+        error:
+          "Authentication service temporarily unavailable. Please try again later.",
+      },
+      { status: 503 },
     );
   }
-} 
+}

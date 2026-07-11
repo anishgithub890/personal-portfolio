@@ -2,7 +2,7 @@
   "hero": {
     "greeting": "Hello, I'm",
     "name": "Anish Mahato",
-    "title": "Full Stack Developer",
+    "title": "Full Stack Engineer",
     "description": "Passionate about creating innovative web solutions with modern technologies. Specializing in React, Next.js, TypeScript, and full-stack development.",
     "buttons": {
       "primary": "Learn More",
@@ -11,9 +11,9 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "A passionate Full Stack Developer with a love for creating innovative solutions",
+    "subtitle": "A passionate Full Stack Engineer with a love for creating innovative solutions",
     "personalInfo": {
-      "whoIAm": "I'm a dedicated Full Stack Developer with 4 years of experience creating exceptional digital experiences. With expertise in modern web technologies, I specialize in building scalable applications that solve real-world problems.",
+      "whoIAm": "I'm a dedicated Full Stack Engineer with 4 years of experience creating exceptional digital experiences. With expertise in modern web technologies, I specialize in building scalable applications that solve real-world problems.",
       "journey": "My journey in software development started with a curiosity about how things work on the web, which has evolved into a deep understanding of both frontend and backend technologies. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.",
       "personal": "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
       "nationality": "Nepal"
@@ -82,15 +82,33 @@
   },
   "experience": {
     "title": "Work Experience",
-    "subtitle": "My professional journey and the impact I've made along the way",
+    "subtitle": "Building reliable products across SaaS, real estate, and conversational experiences",
     "jobs": [
       {
+        "company": "CASABOT - AI HOME",
+        "position": "Full Stack Engineer",
+        "location": "Dubai, UAE",
+        "startDate": "2026-02",
+        "endDate": "",
+        "current": true,
+        "description": "Contributing to CASABOT - AI HOME, a privacy-first AI home automation platform that unifies connected devices across vendors and protocols. The product combines HiveOS autonomous operation, BOTty conversational interaction, remote intelligence dashboards, and edge/cloud processing to make homes and connected environments more intelligent, responsive, and secure.",
+        "technologies": ["Next.js", "React", "TypeScript", "Node.js", "REST APIs", "AI Integrations", "IoT Integrations", "AWS", "EC2", "DocumentDB", "Docker"],
+        "achievements": [
+          "Contribute across the full product lifecycle, from interface design and implementation to backend integration and release quality",
+          "Build responsive, accessible user experiences for intelligent home automation and connected-environment workflows",
+          "Develop and maintain reliable APIs, data flows, and reusable product components for faster iteration",
+          "Deploy and operate production services on AWS EC2 using secure SSH-based server administration and Linux environments",
+          "Work with Amazon DocumentDB and production data workflows while supporting reliability, performance, and secure access",
+          "Support product experiences that connect multiple device brands, protocols, and conversational AI capabilities"
+        ]
+      },
+      {
         "company": "Chaturvedi Software House LLC",
-        "position": "Full Stack Developer - HRMS & CRM System",
+        "position": "Full Stack Engineer - HRMS & CRM System",
         "location": "Dubai, UAE",
         "startDate": "2025",
-        "endDate": "Present",
-        "current": true,
+        "endDate": "2026-01",
+        "current": false,
         "description": "Designed and developed a comprehensive enterprise SaaS platform combining Human Resource Management System (HRMS) and Customer Relationship Management (CRM) capabilities. Built as a scalable multi-tenant application with role-based access control, real-time features, and comprehensive analytics supporting multiple companies with complete data isolation.",
         "technologies": ["Next.js 16", "React 19", "TypeScript", "Node.js", "Express.js", "MySQL", "Prisma ORM", "Redis", "Socket.io", "JWT", "Tailwind CSS", "shadcn/ui", "Zustand", "React Query", "Docker", "Docker Compose", "RESTful APIs", "WebSocket"],
         "achievements": [
@@ -109,11 +127,11 @@
       },
       {
         "company": "Chaturvedi Software House LLC",
-        "position": "Full Stack Developer - Frontend & Backend Lead",
+        "position": "Full Stack Engineer - Frontend & Backend Lead",
         "location": "Dubai, UAE",
         "startDate": "2025",
-        "endDate": "Present",
-        "current": true,
+        "endDate": "2026-01",
+        "current": false,
         "description": "Led both frontend and backend development with full ownership of system architecture for a comprehensive property marketplace connecting brokers with listings, buyer requirements, and AI-powered matching.",
         "technologies": ["React", "Next.js", "Node.js", "MySQL", "TypeScript", "TailwindCSS", "shadcn/ui", "REST APIs", "Prisma", "JWT", "OAuth", "AI Integration"],
         "achievements": [
@@ -126,11 +144,11 @@
       },
       {
         "company": "Chaturvedi Software House LLC",
-        "position": "Full Stack Developer",
+        "position": "Full Stack Engineer",
         "location": "Dubai, UAE",
         "startDate": "2025",
-        "endDate": "Present",
-        "current": true,
+        "endDate": "2026-01",
+        "current": false,
         "description": "Developed comprehensive enterprise-level Real Estate Management System (Fincore RMS) - a multi-tenant SaaS platform for managing property rentals, sales, tenant relationships, and facility operations. Built complete web application independently while closely collaborating with backend developer for API integration and system architecture.",
         "technologies": ["Next.js", "React 19", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Radix UI", "Material-UI", "Framer Motion", "Redux Toolkit", "TanStack React Query", "React Hook Form", "Zod", "Chart.js", "Recharts", "jsPDF", "React-PDF", "PDF.js", "html2canvas", "Axios", "JWT", "AWS", "Docker", "Prisma"],
         "achievements": [
@@ -150,8 +168,8 @@
         "position": "Backend Developer",
         "location": "Dubai, UAE",
         "startDate": "2025",
-        "endDate": "Present",
-        "current": true,
+        "endDate": "2026-01",
+        "current": false,
         "description": "Specialized in backend development for ERP Tally Prime system, focusing on financial management, inventory control, and business process automation. Responsible for API development, database optimization, and integration with third-party systems for comprehensive business management solutions.",
         "technologies": ["Node.js", "Express.js", "MySQL", "MongoDB", "REST APIs", "GraphQL", "TypeScript", "Prisma", "Redis", "Docker", "AWS", "Microservices", "JWT", "OAuth"],
         "achievements": [
@@ -167,7 +185,7 @@
       },
       {
         "company": "Channakya Software Private Limited",
-        "position": "Full Stack Developer",
+        "position": "Full Stack Engineer",
         "location": "Kathmandu, Nepal",
         "startDate": "2022-02",
         "endDate": "2022-11",
@@ -190,7 +208,7 @@
       },
       {
         "company": "Islington College Kathmandu",
-        "position": "Full Stack Developer Intern",
+        "position": "Full Stack Engineer Intern",
         "location": "Kathmandu, Nepal",
         "startDate": "2020-11",
         "endDate": "2021-10",
@@ -241,12 +259,19 @@
       ],
       "database": [
         { "name": "MongoDB", "proficiency": 85 },
+        { "name": "Amazon DocumentDB", "proficiency": 78 },
         { "name": "MySQL", "proficiency": 75 },
         { "name": "Redis", "proficiency": 70 },
         { "name": "Prisma", "proficiency": 80 },
-        { "name": "Mongoose", "proficiency": 85 },
-        { "name": "Laravel", "proficiency": 75 },
-        { "name": "Docker", "proficiency": 80 }
+        { "name": "Mongoose", "proficiency": 85 }
+      ],
+      "devops": [
+        { "name": "AWS", "proficiency": 78 },
+        { "name": "EC2", "proficiency": 78 },
+        { "name": "Linux Server Administration", "proficiency": 78 },
+        { "name": "SSH", "proficiency": 82 },
+        { "name": "Docker", "proficiency": 80 },
+        { "name": "Deployment & Monitoring", "proficiency": 75 }
       ]
     },
     "otherSkills": [
@@ -254,6 +279,7 @@
       "Golang",
       "Python",
       "Git",
+      "Linux",
       "shadcn",
       "Figma",
       "Postman",
@@ -269,7 +295,6 @@
       "JWT",
       "OAuth",
       "Docker Compose",
-      "AWS",
       "Microservices",
       "GraphQL",
       "WebSocket",
@@ -338,7 +363,7 @@
   "footer": {
     "brand": {
       "initials": "AM",
-      "tagline": "Full Stack Developer & Creative Problem Solver"
+      "tagline": "Full Stack Engineer & Creative Problem Solver"
     },
     "contact": {
       "email": "anishgithub890@gmail.com",
@@ -368,9 +393,9 @@
       "title": "Dear Hiring Manager",
       "greeting": "To Whom It May Concern"
     },
-    "opening": "I am writing to express my strong interest in the Full Stack Developer position at your esteemed organization. With over 4 years of professional experience in building scalable web applications, including extensive work in Dubai's dynamic tech industry, I bring a proven track record of delivering enterprise-level solutions that drive business growth.",
+    "opening": "I am writing to express my strong interest in the Full Stack Engineer position at your esteemed organization. With over 4 years of professional experience in building scalable web applications, including extensive work in Dubai's dynamic tech industry, I bring a proven track record of delivering enterprise-level solutions that drive business growth.",
     "body": [
-      "Currently based in Dubai, UAE, I have been working with Chaturvedi Software House LLC since 2022, where I have successfully led multiple high-impact projects. My Dubai experience includes developing a comprehensive Real Estate Management System (Fincore RMS) - a multi-tenant SaaS platform serving the UAE property market, building AI-powered property marketplaces with integrations to Bayut and PropertyFinder, and creating ERP solutions for financial management. This regional expertise has given me deep insights into Middle Eastern business requirements, compliance standards, and market dynamics.",
+      "Currently based in Dubai, UAE, I previously worked with Chaturvedi Software House LLC through January 2026, where I led multiple high-impact projects. My Dubai experience includes developing a comprehensive Real Estate Management System (Fincore RMS) - a multi-tenant SaaS platform serving the UAE property market, building AI-powered property marketplaces with integrations to Bayut and PropertyFinder, and creating ERP solutions for financial management. I now bring that experience to my work at CASABOT - AI HOME.",
       "My technical expertise spans the complete full-stack development spectrum. I excel in modern technologies including React 19, Next.js 15, TypeScript, Node.js, and various database systems (MySQL, MongoDB, PostgreSQL). In Dubai, I have independently built production-ready applications managing thousands of tenants and properties, implemented 55+ reusable UI components, developed role-based authentication systems for Admin/Tenant/Landlord access, and created comprehensive backend architectures with RESTful APIs and microservices. My experience includes handling complex requirements such as digital signatures, PDF generation, payment tracking, KYC document management, and third-party integrations.",
       "What distinguishes my Dubai experience is my ability to deliver complete solutions independently while collaborating effectively with international teams. I have successfully architected and built entire applications from scratch, managed multiple concurrent projects across different business domains (Real Estate, ERP, Property Marketplace), and consistently delivered high-quality solutions that meet strict UAE market standards. My commitment to writing clean, maintainable code and staying current with industry best practices has enabled me to thrive in Dubai's competitive tech landscape."
     ],

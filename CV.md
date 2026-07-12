@@ -6,7 +6,7 @@ I'm a dedicated Full Stack Engineer with 3+ years of experience creating excepti
 
 My journey in software development started with a curiosity about how things work on the web, which has evolved into a deep understanding of both frontend and backend technologies. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.
 
-Currently based in Dubai, UAE, I have been working with Chaturvedi Software House LLC, where I have successfully led multiple high-impact projects including enterprise-level SaaS platforms, multi-tenant applications, and comprehensive business management systems.
+Currently based in Dubai, UAE, I previously worked with Chaturvedi Software House LLC, where I have successfully led multiple high-impact projects including enterprise-level SaaS platforms, multi-tenant applications, and comprehensive business management systems.
 
 ---
 
@@ -43,7 +43,7 @@ Currently based in Dubai, UAE, I have been working with Chaturvedi Software Hous
 ## Current Responsibilities
 
 ### Full Stack Engineer - HRMS & CRM System
-**Chaturvedi Software House LLC, Dubai, UAE** | 2025 - Present
+**Chaturvedi Software House LLC, Dubai, UAE** | 2024 - 2026-01
 
 - **Architecture & Design**: Designed and implemented multi-tenant SaaS architecture with 3-tier hierarchy (Super Admin → Company Admin → Users) and complete data isolation
 - **HRMS Module Development**: Built comprehensive HRMS module with 20+ features including:
@@ -76,7 +76,7 @@ Currently based in Dubai, UAE, I have been working with Chaturvedi Software Hous
 - **Super Admin Panel**: Built super admin panel for company and license management with advanced navigation using Shadcn UI patterns
 
 ### Full Stack Engineer - Frontend & Backend Lead
-**Chaturvedi Software House LLC, Dubai, UAE** | 2025 - Present
+**Chaturvedi Software House LLC, Dubai, UAE** | 2024 - 2026-01
 
 - **Property Marketplace**: Built comprehensive property marketplace with broker directory and transaction management
 - **AI Integration**: Implemented AI-powered matching system for property listings and buyer requirements
@@ -85,7 +85,7 @@ Currently based in Dubai, UAE, I have been working with Chaturvedi Software Hous
 - **Team Collaboration**: Collaborated with frontend team while owning full backend development independently
 
 ### Full Stack Engineer - Real Estate Management System
-**Chaturvedi Software House LLC, Dubai, UAE** | 2025 - Present
+**Chaturvedi Software House LLC, Dubai, UAE** | 2024 - 2026-01
 
 - **Multi-tenant SaaS Platform**: Built complete multi-tenant SaaS Real Estate Management System with role-based authentication (Admin, Tenant, Landlord)
 - **AI-Powered Features**: Implemented AI-powered property matching system with intelligent lead-to-unit matching based on preferences
@@ -97,7 +97,7 @@ Currently based in Dubai, UAE, I have been working with Chaturvedi Software Hous
 - **Responsive Design**: Implemented responsive design with dark/light theme, command menu (Cmd+K), and performance optimization
 
 ### Backend Developer - ERP Tally Prime System
-**Chaturvedi Software House LLC, Dubai, UAE** | 2025 - Present
+**Chaturvedi Software House LLC, Dubai, UAE** | 2024 - 2026-01
 
 - **Financial Management**: Developed robust backend APIs for financial management and inventory control systems
 - **Business Process Automation**: Built comprehensive business process automation with ERP integration

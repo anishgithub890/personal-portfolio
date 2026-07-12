@@ -116,9 +116,36 @@ export default function Sidebar() {
     }
   };
 
-  const navBody = (
+  const renderNavBody = (showCloseButton = false) => (
     <div className="panel flex h-full min-h-0 flex-col overflow-hidden">
-      <div className="flex-1 min-h-0 space-y-8 overflow-y-auto overscroll-contain p-6 pt-16 md:pt-6">
+      <div className="flex shrink-0 items-center justify-between gap-3 border-b border-white/8 px-5 py-4">
+        <a
+          href="#home"
+          onClick={(event) => {
+            event.preventDefault();
+            handleNavClick("#home", "home");
+          }}
+          className="group min-w-0"
+          aria-label="Anish Mahato home"
+        >
+          <span className="sidebar-logo group-hover:text-primary/95">Anish Mahato</span>
+          <span className="mt-2 block font-[var(--font-ibm-plex-mono)] text-[10px] uppercase tracking-[0.28em] text-primary/75">
+            Full Stack Engineer
+          </span>
+        </a>
+
+        {showCloseButton && (
+          <button
+            type="button"
+            onClick={() => setMobileOpen(false)}
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-black/35 text-white backdrop-blur transition-colors hover:border-primary/30 hover:bg-primary/10 hover:text-primary"
+            aria-label="Close navigation"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        )}
+      </div>
+      <div className="flex-1 min-h-0 space-y-8 overflow-y-auto overscroll-contain p-6 pt-4">
         <div>
           <nav className="space-y-2">
             {navigationItems.map((item) => {
@@ -216,39 +243,34 @@ export default function Sidebar() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setMobileOpen(true)}
-        className="fixed left-4 top-4 z-50 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/35 text-white backdrop-blur md:hidden"
-        aria-label="Open navigation"
-      >
-        <Menu className="h-5 w-5" />
-      </button>
+      {!mobileOpen && (
+        <button
+          type="button"
+          onClick={() => setMobileOpen(true)}
+          className="fixed right-4 top-4 z-50 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/35 text-white backdrop-blur hover:border-white/20 hover:bg-black/50 md:hidden"
+          aria-label="Open navigation"
+          aria-expanded={false}
+        >
+          <Menu className="h-5 w-5" />
+        </button>
+      )}
 
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
           onClick={() => setMobileOpen(false)}
         >
           <div
             className="absolute inset-y-0 left-0 w-[88vw] max-w-sm p-3"
             onClick={(event) => event.stopPropagation()}
           >
-            <button
-              type="button"
-              onClick={() => setMobileOpen(false)}
-              className="absolute right-6 top-6 z-10 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white backdrop-blur"
-              aria-label="Close navigation"
-            >
-              <X className="h-4 w-4" />
-            </button>
-            {navBody}
+            {renderNavBody(true)}
           </div>
         </div>
       )}
 
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-[288px] p-5 md:block">
-        {navBody}
+        {renderNavBody()}
       </aside>
     </>
   );

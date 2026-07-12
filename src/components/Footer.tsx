@@ -14,7 +14,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-white/10 bg-black/20">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 text-sm text-muted-foreground sm:px-6 md:ml-[288px] md:px-8 lg:flex-row lg:items-center lg:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-8 text-sm text-muted-foreground sm:px-6 md:px-8 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <p className="font-medium text-white">Anish Mahato</p>
           <p className="mt-1">Full stack engineer building thoughtful, fast, production-ready web products.</p>

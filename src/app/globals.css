@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,8 +6,9 @@
 
 @layer base {
   :root {
-    --font-space-grotesk: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
-    --font-ibm-plex-mono: "IBM Plex Mono", "SFMono-Regular", "Cascadia Code", monospace;
+    --font-space-grotesk: "Sora", "Avenir Next", "Segoe UI", sans-serif;
+    --font-ibm-plex-mono:
+      "JetBrains Mono", "SFMono-Regular", "Cascadia Code", monospace;
     --font-signature: "Great Vibes", "Segoe Script", "Brush Script MT", cursive;
     --background: 225 24% 8%;
     --foreground: 210 20% 96%;
@@ -36,18 +37,33 @@
   }
 
   html {
+    overflow-x: hidden;
     scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     background-image:
-      radial-gradient(circle at top left, rgba(47, 224, 177, 0.16), transparent 28%),
-      radial-gradient(circle at top right, rgba(104, 114, 255, 0.14), transparent 24%),
+      radial-gradient(
+        circle at top left,
+        rgba(47, 224, 177, 0.16),
+        transparent 28%
+      ),
+      radial-gradient(
+        circle at top right,
+        rgba(104, 114, 255, 0.14),
+        transparent 24%
+      ),
       linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 30%);
     min-height: 100vh;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "kern";
     text-rendering: optimizeLegibility;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 
   ::selection {
@@ -110,6 +126,63 @@
 
   .section-card {
     @apply rounded-[30px] border border-white/10 bg-white/[0.03] p-6 shadow-xl shadow-black/10 backdrop-blur-md sm:p-8;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-shell {
+    @apply rounded-[34px] border border-white/10 bg-white/[0.035] p-6 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-8;
+    overflow-wrap: anywhere;
+  }
+
+  .metric-card,
+  .feature-card,
+  .skill-card,
+  .experience-card {
+    @apply relative overflow-hidden border border-white/10 bg-black/25 shadow-lg shadow-black/10 backdrop-blur-md;
+    overflow-wrap: anywhere;
+  }
+
+  .metric-card {
+    @apply rounded-3xl p-4;
+  }
+
+  .feature-card {
+    @apply rounded-[24px] p-5;
+  }
+
+  .skill-card {
+    @apply rounded-[26px] p-5;
+  }
+
+  .experience-card {
+    @apply rounded-[28px] p-6;
+  }
+
+  .metric-card::before,
+  .feature-card::before,
+  .skill-card::before,
+  .experience-card::before,
+  .portrait-card::before {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent;
+  }
+
+  .feature-card::after,
+  .skill-card::after,
+  .experience-card::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: radial-gradient(
+      circle at top right,
+      rgba(47, 224, 177, 0.12),
+      transparent 34%
+    );
+  }
+
+  .feature-card:hover::after,
+  .skill-card:hover::after,
+  .experience-card:hover::after {
+    opacity: 1;
   }
 
   .section-title {
@@ -122,6 +195,8 @@
 
   .pill {
     @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-muted-foreground;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .sidebar-logo {

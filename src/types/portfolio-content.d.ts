@@ -78,6 +78,9 @@ export interface SkillsContent {
     backend: Skill[];
     database: Skill[];
     devops: Skill[];
+    aiIot: Skill[];
+    security: Skill[];
+    [category: string]: Skill[];
   };
   otherSkills: string[];
 }

@@ -22,14 +22,14 @@ import { cn } from "@/lib/utils";
 
 const navigationItems = [
   { id: "home", label: "Home", href: "#home", icon: Home },
-  { id: "about", label: "About", href: "#about", icon: User },
-  { id: "skills", label: "Skills", href: "#skills", icon: Wrench },
   {
     id: "experience",
     label: "Experience",
     href: "#experience",
     icon: Briefcase,
   },
+  { id: "skills", label: "Skills", href: "#skills", icon: Wrench },
+  { id: "about", label: "About", href: "#about", icon: User },
   { id: "contact", label: "Contact", href: "#contact", icon: Mail },
 ];
 
@@ -118,23 +118,8 @@ export default function Sidebar() {
 
   const renderNavBody = (showCloseButton = false) => (
     <div className="panel flex h-full min-h-0 flex-col overflow-hidden">
-      <div className="flex shrink-0 items-center justify-between gap-3 border-b border-white/8 px-5 py-4">
-        <a
-          href="#home"
-          onClick={(event) => {
-            event.preventDefault();
-            handleNavClick("#home", "home");
-          }}
-          className="group min-w-0"
-          aria-label="Anish Mahato home"
-        >
-          <span className="sidebar-logo group-hover:text-primary/95">Anish Mahato</span>
-          <span className="mt-2 block font-[var(--font-ibm-plex-mono)] text-[10px] uppercase tracking-[0.28em] text-primary/75">
-            Full Stack Engineer
-          </span>
-        </a>
-
-        {showCloseButton && (
+      {showCloseButton && (
+        <div className="flex shrink-0 justify-end border-b border-white/8 px-5 py-4">
           <button
             type="button"
             onClick={() => setMobileOpen(false)}
@@ -143,8 +128,8 @@ export default function Sidebar() {
           >
             <X className="h-5 w-5" />
           </button>
-        )}
-      </div>
+        </div>
+      )}
       <div className="flex-1 min-h-0 space-y-8 overflow-y-auto overscroll-contain p-6 pt-4">
         <div>
           <nav className="space-y-2">

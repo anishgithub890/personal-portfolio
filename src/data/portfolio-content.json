@@ -82,7 +82,7 @@
   },
   "experience": {
     "title": "Work Experience",
-    "subtitle": "Building reliable products across SaaS, real estate, and conversational experiences",
+    "subtitle": "Building reliable products across AI home automation, cloud operations, SaaS, and real estate platforms",
     "jobs": [
       {
         "company": "CASABOT - AI HOME",
@@ -91,15 +91,16 @@
         "startDate": "2026-02",
         "endDate": "",
         "current": true,
-        "description": "Contributing to CASABOT - AI HOME, a privacy-first AI home automation platform that unifies connected devices across vendors and protocols. The product combines HiveOS autonomous operation, BOTty conversational interaction, remote intelligence dashboards, and edge/cloud processing to make homes and connected environments more intelligent, responsive, and secure.",
-        "technologies": ["Next.js", "React", "TypeScript", "Node.js", "REST APIs", "AI Integrations", "IoT Integrations", "AWS", "EC2", "DocumentDB", "Docker"],
+        "description": "Contributing to CASABOT - AI HOME, a privacy-first AI home automation company building Core, the operating system for CASABOT. Core unifies connected devices across vendors and protocols through HiveOS autonomous operation, BOTty conversational interaction, remote intelligence dashboards, and edge/cloud processing for responsive, secure connected environments.",
+        "technologies": ["Core OS", "Next.js", "React", "TypeScript", "Node.js", "REST APIs", "AI Integrations", "IoT Integrations", "AWS", "EC2", "SSH", "Linux", "DocumentDB", "Docker", "Automation Systems"],
         "achievements": [
-          "Contribute across the full product lifecycle, from interface design and implementation to backend integration and release quality",
-          "Build responsive, accessible user experiences for intelligent home automation and connected-environment workflows",
-          "Develop and maintain reliable APIs, data flows, and reusable product components for faster iteration",
-          "Deploy and operate production services on AWS EC2 using secure SSH-based server administration and Linux environments",
-          "Work with Amazon DocumentDB and production data workflows while supporting reliability, performance, and secure access",
-          "Support product experiences that connect multiple device brands, protocols, and conversational AI capabilities"
+          "Contribute across the full product lifecycle, from product interface design and implementation to backend integration, QA, and release quality",
+          "Build responsive, accessible dashboards for intelligent home automation, connected-environment workflows, and remote intelligence controls",
+          "Develop and maintain Core OS services, reliable APIs, reusable product components, and data flows for AI-assisted automation experiences",
+          "Deploy, debug, and operate production services on AWS EC2 using secure SSH-based server administration and Linux environments",
+          "Work with Amazon DocumentDB, production data workflows, environment variables, logs, and secure access patterns",
+          "Support Core operating-system experiences that coordinate HiveOS background automation, BOTty conversational control, device protocols, and cloud services",
+          "Collaborate on product experiences that connect multiple device brands, automation rules, and conversational AI capabilities without exposing user privacy"
         ]
       },
       {
@@ -255,6 +256,8 @@
         { "name": "Node.js", "proficiency": 85 },
         { "name": "Express.js", "proficiency": 80 },
         { "name": "REST APIs", "proficiency": 88 },
+        { "name": "API Architecture", "proficiency": 84 },
+        { "name": "WebSocket / Socket.io", "proficiency": 78 },
         { "name": "Laravel", "proficiency": 75 }
       ],
       "database": [
@@ -272,6 +275,22 @@
         { "name": "SSH", "proficiency": 82 },
         { "name": "Docker", "proficiency": 80 },
         { "name": "Deployment & Monitoring", "proficiency": 75 }
+      ],
+      "aiIot": [
+        { "name": "AI Integrations", "proficiency": 78 },
+        { "name": "Conversational UX", "proficiency": 76 },
+        { "name": "IoT Integrations", "proficiency": 74 },
+        { "name": "Automation Workflows", "proficiency": 80 },
+        { "name": "Device Protocol Concepts", "proficiency": 70 },
+        { "name": "Edge / Cloud Workflows", "proficiency": 72 }
+      ],
+      "security": [
+        { "name": "JWT", "proficiency": 84 },
+        { "name": "OAuth", "proficiency": 76 },
+        { "name": "RBAC", "proficiency": 82 },
+        { "name": "API Security", "proficiency": 80 },
+        { "name": "Secure Server Access", "proficiency": 78 },
+        { "name": "Rate Limiting", "proficiency": 74 }
       ]
     },
     "otherSkills": [
@@ -307,17 +326,12 @@
       "WebSocket Testing",
       "API Testing",
       "API Documentation",
-      "API Versioning",
-      "API Rate Limiting",
-      "API Security",
-      "API Authentication",
-      "API Authorization",
-      "API Error Handling",
-      "API Logging",
-      "API Monitoring",
-      "API Performance",
-      "API Scalability",
-      "API Reliability"
+      "CI/CD",
+      "Environment Variables",
+      "Server Logs",
+      "Release Quality",
+      "Performance Optimization",
+      "Scalable Architecture"
     ]
   },
   "contact": {

@@ -3,7 +3,7 @@
     "greeting": "Hello, I'm",
     "name": "Anish Mahato",
     "title": "Full Stack Engineer",
-    "description": "Passionate about creating innovative web solutions with modern technologies. Specializing in React, Next.js, TypeScript, and full-stack development.",
+    "description": "Building Core, CASABOT’s operating system for AI homes, alongside voice agents, connected services, and cloud infrastructure.",
     "buttons": {
       "primary": "Learn More",
       "secondary": "Get In Touch"
@@ -13,21 +13,21 @@
     "title": "About Me",
     "subtitle": "A passionate Full Stack Engineer with a love for creating innovative solutions",
     "personalInfo": {
-      "whoIAm": "I'm a dedicated Full Stack Engineer with 4 years of experience creating exceptional digital experiences. With expertise in modern web technologies, I specialize in building scalable applications that solve real-world problems.",
-      "journey": "My journey in software development started with a curiosity about how things work on the web, which has evolved into a deep understanding of both frontend and backend technologies. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.",
-      "personal": "When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
+      "whoIAm": "Full Stack Software Engineer with 5 years of experience delivering enterprise and AI products, with end-to-end ownership in startup environments.",
+      "journey": "At CASABOT, I work across Python and TypeScript services, conversational interfaces, event-driven automation, and production operations. My earlier work spans multi-tenant HRMS/CRM, property marketplaces, real estate management, and ERP systems.",
+      "personal": "I focus on clear system design, secure access, useful AI behavior, and tested releases, with ownership from product requirements through production support.",
       "nationality": "Nepal"
     },
     "education": [
       {
-        "degree": "Bachelor's Degree",
+        "degree": "Bachelor's Degree - Computer Science & Technology",
         "institution": "London Metropolitan University",
-        "field": "Computer Science & Technology"
+        "field": "2019 - 2022"
       },
       {
-        "degree": "10+2 Science",
+        "degree": "Higher Secondary Education - Science",
         "institution": "Oxford Higher Secondary School",
-        "field": "Science"
+        "field": "2016 - 2018"
       }
     ],
     "services": {
@@ -37,15 +37,15 @@
       },
       "backend": {
         "title": "Backend Development",
-        "technologies": "Node.js, Express, MongoDB, PostgreSQL"
+        "technologies": "Python, Node.js, aiohttp, asyncio, event-driven services"
       },
       "devops": {
         "title": "DevOps & Tools",
-        "technologies": "Docker, Git, CI/CD, VM"
+        "technologies": "AWS EC2, Docker, Linux, OpenTelemetry, Grafana, CI/CD"
       },
       "design": {
-        "title": "Design & UX",
-        "technologies": "Figma, Responsive Design, Accessibility"
+        "title": "AI & Connected Products",
+        "technologies": "Voice/chat agents, knowledge grounding, guardrails, IoT integrations"
       }
     },
     "stats": [
@@ -91,56 +91,27 @@
         "startDate": "2026-02",
         "endDate": "",
         "current": true,
-        "description": "Contributing to CASABOT - AI HOME, a privacy-first AI home automation company building Core, the operating system for CASABOT. Core unifies connected devices across vendors and protocols through HiveOS autonomous operation, BOTty conversational interaction, remote intelligence dashboards, and edge/cloud processing for responsive, secure connected environments.",
-        "technologies": ["Core OS", "Next.js", "React", "TypeScript", "Node.js", "REST APIs", "AI Integrations", "IoT Integrations", "AWS", "EC2", "SSH", "Linux", "DocumentDB", "Docker", "Automation Systems"],
+        "description": "Contributing to Core, CASABOT’s operating system for AI homes, with conversational agents, event-driven services, and connected hospitality workflows.",
+        "technologies": [
+          "Python",
+          "TypeScript",
+          "React",
+          "Next.js",
+          "RabbitMQ",
+          "Auth0 / OIDC",
+          "AWS EC2",
+          "DocumentDB",
+          "Docker",
+          "OpenTelemetry",
+          "Grafana"
+        ],
         "achievements": [
-          "Contribute across the full product lifecycle, from product interface design and implementation to backend integration, QA, and release quality",
-          "Build responsive, accessible dashboards for intelligent home automation, connected-environment workflows, and remote intelligence controls",
-          "Develop and maintain Core OS services, reliable APIs, reusable product components, and data flows for AI-assisted automation experiences",
-          "Deploy, debug, and operate production services on AWS EC2 using secure SSH-based server administration and Linux environments",
-          "Work with Amazon DocumentDB, production data workflows, environment variables, logs, and secure access patterns",
-          "Support Core operating-system experiences that coordinate HiveOS background automation, BOTty conversational control, device protocols, and cloud services",
-          "Collaborate on product experiences that connect multiple device brands, automation rules, and conversational AI capabilities without exposing user privacy"
-        ]
-      },
-      {
-        "company": "Chaturvedi Software House LLC",
-        "position": "Full Stack Engineer - HRMS & CRM System",
-        "location": "Dubai, UAE",
-        "startDate": "2024",
-        "endDate": "2026-01",
-        "current": false,
-        "description": "Designed and developed a comprehensive enterprise SaaS platform combining Human Resource Management System (HRMS) and Customer Relationship Management (CRM) capabilities. Built as a scalable multi-tenant application with role-based access control, real-time features, and comprehensive analytics supporting multiple companies with complete data isolation.",
-        "technologies": ["Next.js 16", "React 19", "TypeScript", "Node.js", "Express.js", "MySQL", "Prisma ORM", "Redis", "Socket.io", "JWT", "Tailwind CSS", "shadcn/ui", "Zustand", "React Query", "Docker", "Docker Compose", "RESTful APIs", "WebSocket"],
-        "achievements": [
-          "Designed and implemented multi-tenant SaaS architecture with 3-tier hierarchy (Super Admin → Company Admin → Users) and complete data isolation",
-          "Built HRMS module with 20+ features including employee lifecycle management, recruitment, attendance, leave, payroll with multi-currency support, performance management, and people analytics",
-          "Developed CRM module with 25+ features including lead management with scoring and routing, contact/account management, deal pipeline, sales forecasting, quotes, orders, invoicing, and campaign management",
-          "Created complex database schema with 100+ tables, optimized queries, and strategic indexing for high performance",
-          "Implemented advanced security with JWT authentication, RBAC with 100+ granular permissions, 2FA support, and rate limiting",
-          "Built 200+ RESTful API endpoints with consistent response formats, 45+ controllers, 48+ services, and 45+ routes",
-          "Developed frontend with 50+ pages, 100+ components, and 50+ API clients using modern React patterns and state management",
-          "Implemented real-time features with Socket.io, Redis caching for performance, server-side pagination, and code splitting",
-          "Created custom dashboards, Kanban boards, data tables, real-time notifications, audit logging, and import/export functionality",
-          "Built super admin panel for company and license management with advanced navigation using Shadcn UI patterns",
-          "Delivered production-ready enterprise platform with full TypeScript, modular architecture, and centralized error handling"
-        ]
-      },
-      {
-        "company": "Chaturvedi Software House LLC",
-        "position": "Full Stack Engineer - Frontend & Backend Lead",
-        "location": "Dubai, UAE",
-        "startDate": "2024",
-        "endDate": "2026-01",
-        "current": false,
-        "description": "Led both frontend and backend development with full ownership of system architecture for a comprehensive property marketplace connecting brokers with listings, buyer requirements, and AI-powered matching.",
-        "technologies": ["React", "Next.js", "Node.js", "MySQL", "TypeScript", "TailwindCSS", "shadcn/ui", "REST APIs", "Prisma", "JWT", "OAuth", "AI Integration"],
-        "achievements": [
-          "Built comprehensive property marketplace with broker directory and transaction management",
-          "Implemented AI-powered matching system for property listings and buyer requirements",
-          "Developed complete backend architecture including activity feeds and third-party integrations (Bayut, PropertyFinder)",
-          "Created admin panel with bulk actions, property imports, and social collaboration features",
-          "Collaborated with frontend team while owning full backend development independently"
+          "Own full-stack delivery in a startup, translating product requirements into system designs, tested releases, and production support.",
+          "Design Python/TypeScript services for LLM tool execution and event-driven automation, using RabbitMQ workers, bounded retries, and reconciliation.",
+          "Ground AI responses in authorized knowledge, enforce room-scoped guardrails, and evaluate tool selection, prompt injection, missing context, and unauthorized actions.",
+          "Integrate Oracle OPERA/OHIP, smart-device platforms, HubSpot, and Chargebee to connect hospitality, CRM, and subscription workflows.",
+          "Implement Auth0/OpenID Connect (OIDC) authentication, server-side authorization, and Cloudflare-protected gateway access.",
+          "Deploy Docker services on AWS EC2/Linux, monitor application behavior with OpenTelemetry/Grafana, and contribute to CI/CD releases."
         ]
       },
       {
@@ -150,188 +121,255 @@
         "startDate": "2024",
         "endDate": "2026-01",
         "current": false,
-        "description": "Developed comprehensive enterprise-level Real Estate Management System (Fincore RMS) - a multi-tenant SaaS platform for managing property rentals, sales, tenant relationships, and facility operations. Built complete web application independently while closely collaborating with backend developer for API integration and system architecture.",
-        "technologies": ["Next.js", "React 19", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Radix UI", "Material-UI", "Framer Motion", "Redux Toolkit", "TanStack React Query", "React Hook Form", "Zod", "Chart.js", "Recharts", "jsPDF", "React-PDF", "PDF.js", "html2canvas", "Axios", "JWT", "AWS", "Docker", "Prisma"],
+        "description": "Delivered enterprise SaaS products across HRMS/CRM, property marketplaces, Fincore RMS, and ERP finance and inventory.",
+        "technologies": [
+          "Next.js",
+          "React",
+          "Node.js",
+          "MySQL",
+          "Prisma",
+          "Redis",
+          "Socket.io",
+          "RBAC"
+        ],
         "achievements": [
-          "Built complete multi-tenant SaaS Real Estate Management System with role-based authentication (Admin, Tenant, Landlord)",
-          "Implemented AI-powered property matching system with intelligent lead-to-unit matching based on preferences",
-          "Developed comprehensive contract management with digital signatures, PDF generation, and document processing",
-          "Created financial operations dashboard with payment tracking, cheques summary, and KYC document management",
-          "Built maintenance ticketing system with complaint management and multi-level approval workflows",
-          "Developed 15+ master data modules with reusable data table components and CRUD operations",
-          "Built 55+ reusable UI components and custom hooks for debouncing, pagination, and authentication",
-          "Implemented responsive design with dark/light theme, command menu (Cmd+K), and performance optimization",
-          "Delivered production-ready enterprise application managing multiple properties and thousands of tenants"
-        ]
-      },
-      {
-        "company": "Chaturvedi Software House LLC",
-        "position": "Backend Developer",
-        "location": "Dubai, UAE",
-        "startDate": "2024",
-        "endDate": "2026-01",
-        "current": false,
-        "description": "Specialized in backend development for ERP Tally Prime system, focusing on financial management, inventory control, and business process automation. Responsible for API development, database optimization, and integration with third-party systems for comprehensive business management solutions.",
-        "technologies": ["Node.js", "Express.js", "MySQL", "MongoDB", "REST APIs", "GraphQL", "TypeScript", "Prisma", "Redis", "Docker", "AWS", "Microservices", "JWT", "OAuth"],
-        "achievements": [
-          "Developed robust backend APIs for financial management and inventory control systems",
-          "Built comprehensive business process automation with ERP integration",
-          "Optimized database performance and implemented caching strategies with Redis",
-          "Created microservices architecture for scalable ERP solutions",
-          "Integrated third-party systems and payment gateways for seamless business operations",
-          "Implemented real-time data synchronization and reporting features",
-          "Built secure authentication and authorization systems for multi-user access",
-          "Delivered 1+ year of consistent backend development for enterprise ERP solutions"
+          "Designed multi-tenant HRMS/CRM with company isolation, 100+ permissions, 200+ REST endpoints, and a 100+ table schema.",
+          "Owned property marketplace backend architecture, including AI-assisted matching, bulk imports, and Bayut/PropertyFinder integrations.",
+          "Delivered Fincore RMS contracts, payments, KYC, and maintenance workflows with 55+ reusable components and 15+ master-data modules.",
+          "Built ERP finance/inventory APIs; optimized data access with Redis, indexing, and pagination, and added Socket.io updates."
         ]
       },
       {
         "company": "Channakya Software Private Limited",
-        "position": "Full Stack Engineer",
+        "position": "Software Engineer",
         "location": "Kathmandu, Nepal",
-        "startDate": "2022-02",
-        "endDate": "2022-11",
+        "startDate": "2022-10",
+        "endDate": "2023-11",
         "current": false,
-        "description": "Worked across multiple roles including backend, frontend, and .NET development. Contributed to projects involving API development, frontend implementation, and performance optimization.",
+        "description": "Built banking, tourism, recruitment, and eCommerce applications across frontend and backend systems.",
         "technologies": [
           "Node.js",
-          "MongoDB",
+          "React",
           "MySQL",
-          "React.js",
-          "TypeScript",
-          ".NET Framework",
-          "API Testing"
+          "MongoDB",
+          ".NET"
         ],
         "achievements": [
-          "Developed backend APIs using Node.js and integrated with MongoDB and MySQL",
-          "Built responsive frontend features using React.js and TypeScript",
-          "Worked on a .NET-based eCommerce website and performed API testing across modules"
+          "Built APIs and interfaces for banking, tourism, and recruitment applications using Node.js, React, MySQL, and MongoDB.",
+          "Contributed to .NET eCommerce development and API integration testing."
         ]
       },
       {
-        "company": "Islington College Kathmandu",
-        "position": "Full Stack Engineer Intern",
+        "company": "Islington College",
+        "position": "Full Stack Developer Intern",
         "location": "Kathmandu, Nepal",
         "startDate": "2020-11",
         "endDate": "2021-10",
         "current": false,
-        "description": "Held multiple development roles during a year-long internship program, contributing to mobile and backend projects using Flutter, Laravel, and Android Java.",
+        "description": "Flutter, Laravel/MySQL, Android Java, and Oracle Database development.",
         "technologies": [
           "Flutter",
           "Laravel",
-          "PHP",
           "MySQL",
-          "Workbench",
-          "Android (Java)",
+          "Android Java",
           "Oracle Database"
         ],
         "achievements": [
-          "Developed mobile applications using Flutter during iOS internship phase",
-          "Built backend services with Laravel and MySQL, including API integrations",
-          "Contributed to Android apps using Java and Oracle Database during initial internship phase"
+          "Contributed to mobile applications and backend integrations during a year-long internship."
         ]
-      }      
+      }
     ],
     "education": {
       "title": "Education",
-      "degree": "Bachelor of Science in Computer Science",
-      "institution": "University of Technology",
-      "duration": "2016 - 2020",
-      "gpa": "3.8/4.0",
-      "description": "Graduated with honors. Specialized in software engineering and web development. Completed capstone project on modern web application architecture."
+      "degree": "Bachelor's Degree - Computer Science & Technology",
+      "institution": "London Metropolitan University",
+      "duration": "2019 - 2022",
+      "gpa": "",
+      "description": "Computer Science & Technology"
     }
   },
   "skills": {
     "title": "My Skills",
-    "subtitle": "A comprehensive overview of my technical expertise and proficiency levels",
+    "subtitle": "Tools and practices I use across product delivery, AI services, integrations, and production operations.",
     "categories": {
       "frontend": [
-        { "name": "React", "proficiency": 95 },
-        { "name": "Next.js", "proficiency": 90 },
-        { "name": "TypeScript", "proficiency": 88 },
-        { "name": "JavaScript", "proficiency": 92 },
-        { "name": "Tailwind CSS", "proficiency": 85 },
-        { "name": "HTML/CSS", "proficiency": 90 }
+        {
+          "name": "React",
+          "proficiency": 95
+        },
+        {
+          "name": "Next.js",
+          "proficiency": 90
+        },
+        {
+          "name": "TypeScript",
+          "proficiency": 88
+        },
+        {
+          "name": "JavaScript",
+          "proficiency": 92
+        },
+        {
+          "name": "Tailwind CSS",
+          "proficiency": 85
+        },
+        {
+          "name": "HTML/CSS",
+          "proficiency": 90
+        },
+        {
+          "name": "Lit",
+          "proficiency": 75
+        }
       ],
       "backend": [
-        { "name": "Node.js", "proficiency": 85 },
-        { "name": "Express.js", "proficiency": 80 },
-        { "name": "REST APIs", "proficiency": 88 },
-        { "name": "API Architecture", "proficiency": 84 },
-        { "name": "WebSocket / Socket.io", "proficiency": 78 },
-        { "name": "Laravel", "proficiency": 75 }
+        {
+          "name": "Python / aiohttp / asyncio",
+          "proficiency": 80
+        },
+        {
+          "name": "Node.js",
+          "proficiency": 85
+        },
+        {
+          "name": "Express.js",
+          "proficiency": 80
+        },
+        {
+          "name": "REST APIs",
+          "proficiency": 88
+        },
+        {
+          "name": "API Architecture",
+          "proficiency": 84
+        },
+        {
+          "name": "WebSocket / Socket.io",
+          "proficiency": 78
+        }
       ],
       "database": [
-        { "name": "MongoDB", "proficiency": 85 },
-        { "name": "Amazon DocumentDB", "proficiency": 78 },
-        { "name": "MySQL", "proficiency": 75 },
-        { "name": "Redis", "proficiency": 70 },
-        { "name": "Prisma", "proficiency": 80 },
-        { "name": "Mongoose", "proficiency": 85 }
+        {
+          "name": "MongoDB",
+          "proficiency": 85
+        },
+        {
+          "name": "Amazon DocumentDB",
+          "proficiency": 78
+        },
+        {
+          "name": "MySQL",
+          "proficiency": 75
+        },
+        {
+          "name": "Redis",
+          "proficiency": 70
+        },
+        {
+          "name": "Prisma",
+          "proficiency": 80
+        },
+        {
+          "name": "Mongoose",
+          "proficiency": 85
+        }
       ],
       "devops": [
-        { "name": "AWS", "proficiency": 78 },
-        { "name": "EC2", "proficiency": 78 },
-        { "name": "Linux Server Administration", "proficiency": 78 },
-        { "name": "SSH", "proficiency": 82 },
-        { "name": "Docker", "proficiency": 80 },
-        { "name": "Deployment & Monitoring", "proficiency": 75 }
+        {
+          "name": "AWS EC2",
+          "proficiency": 78
+        },
+        {
+          "name": "Docker",
+          "proficiency": 80
+        },
+        {
+          "name": "Linux Administration",
+          "proficiency": 78
+        },
+        {
+          "name": "OpenTelemetry",
+          "proficiency": 75
+        },
+        {
+          "name": "Grafana",
+          "proficiency": 75
+        },
+        {
+          "name": "CI/CD",
+          "proficiency": 70
+        }
       ],
       "aiIot": [
-        { "name": "AI Integrations", "proficiency": 78 },
-        { "name": "Conversational UX", "proficiency": 76 },
-        { "name": "IoT Integrations", "proficiency": 74 },
-        { "name": "Automation Workflows", "proficiency": 80 },
-        { "name": "Device Protocol Concepts", "proficiency": 70 },
-        { "name": "Edge / Cloud Workflows", "proficiency": 72 }
+        {
+          "name": "Voice & Chat Agents",
+          "proficiency": 80
+        },
+        {
+          "name": "Knowledge Grounding",
+          "proficiency": 78
+        },
+        {
+          "name": "AI Guardrails & Evaluations",
+          "proficiency": 78
+        },
+        {
+          "name": "STT / TTS Integrations",
+          "proficiency": 78
+        },
+        {
+          "name": "IoT & Hospitality Integrations",
+          "proficiency": 78
+        },
+        {
+          "name": "LLM Tool Execution",
+          "proficiency": 80
+        }
       ],
       "security": [
-        { "name": "JWT", "proficiency": 84 },
-        { "name": "OAuth", "proficiency": 76 },
-        { "name": "RBAC", "proficiency": 82 },
-        { "name": "API Security", "proficiency": 80 },
-        { "name": "Secure Server Access", "proficiency": 78 },
-        { "name": "Rate Limiting", "proficiency": 74 }
+        {
+          "name": "Auth0 / OpenID Connect",
+          "proficiency": 80
+        },
+        {
+          "name": "Server-side Authorization",
+          "proficiency": 82
+        },
+        {
+          "name": "RBAC",
+          "proficiency": 82
+        },
+        {
+          "name": "API Security",
+          "proficiency": 80
+        },
+        {
+          "name": "Cloudflare Gateway Access",
+          "proficiency": 76
+        },
+        {
+          "name": "Secure SSH Access",
+          "proficiency": 82
+        }
       ]
     },
     "otherSkills": [
-      "Java",
-      "Golang",
-      "Python",
+      "RabbitMQ",
+      "Background Workers",
+      "Bounded Retries",
+      "Reconciliation",
+      "MCP",
+      "WhatsApp Chat / Calls",
+      "Oracle OPERA / OHIP",
+      "HubSpot",
+      "Chargebee",
+      "OpenAI APIs",
+      "ElevenLabs APIs",
+      "System Design",
+      "Multi-tenant SaaS",
       "Git",
-      "Linux",
-      "shadcn",
-      "Figma",
-      "Postman",
-      "VS Code",
-      "Android Studio",
-      "Webpack",
-      "Vite",
-      "Framer Motion",
-      "Redux",
-      "Zustand",
-      "React Query",
-      "Socket.io",
-      "JWT",
-      "OAuth",
-      "Docker Compose",
-      "Microservices",
-      "GraphQL",
-      "WebSocket",
-      "PDF.js",
-      "html2canvas",
-      "MySQL Workbench",
-      "MongoDB Compass",
-      "Prisma Studio",
-      "REST Client",
-      "WebSocket Testing",
       "API Testing",
-      "API Documentation",
-      "CI/CD",
-      "Environment Variables",
-      "Server Logs",
-      "Release Quality",
-      "Performance Optimization",
-      "Scalable Architecture"
+      "Figma"
     ]
   },
   "contact": {
@@ -397,8 +435,18 @@
     "copyright": "© {currentYear} Anish Mahato."
   },
   "navigation": {
-    "sections": ["hero", "about", "skills", "experience", "contact"],
-    "skillTabs": ["Frontend", "Backend", "Database"] 
+    "sections": [
+      "hero",
+      "about",
+      "skills",
+      "experience",
+      "contact"
+    ],
+    "skillTabs": [
+      "Frontend",
+      "Backend",
+      "Database"
+    ]
   },
   "coverLetter": {
     "title": "Cover Letter",
@@ -407,16 +455,36 @@
       "title": "Dear Hiring Manager",
       "greeting": "To Whom It May Concern"
     },
-    "opening": "I am writing to express my strong interest in the Full Stack Engineer position at your esteemed organization. With over 4 years of professional experience in building scalable web applications, including extensive work in Dubai's dynamic tech industry, I bring a proven track record of delivering enterprise-level solutions that drive business growth.",
+    "opening": "I bring 5 years of experience delivering enterprise and AI products, with end-to-end ownership across full stack development, integrations, and cloud operations.",
     "body": [
-      "Currently based in Dubai, UAE, I previously worked with Chaturvedi Software House LLC through January 2026, where I led multiple high-impact projects. My Dubai experience includes developing a comprehensive Real Estate Management System (Fincore RMS) - a multi-tenant SaaS platform serving the UAE property market, building AI-powered property marketplaces with integrations to Bayut and PropertyFinder, and creating ERP solutions for financial management. I now bring that experience to my work at CASABOT - AI HOME.",
-      "My technical expertise spans the complete full-stack development spectrum. I excel in modern technologies including React 19, Next.js 15, TypeScript, Node.js, and various database systems (MySQL, MongoDB, PostgreSQL). In Dubai, I have independently built production-ready applications managing thousands of tenants and properties, implemented 55+ reusable UI components, developed role-based authentication systems for Admin/Tenant/Landlord access, and created comprehensive backend architectures with RESTful APIs and microservices. My experience includes handling complex requirements such as digital signatures, PDF generation, payment tracking, KYC document management, and third-party integrations.",
-      "What distinguishes my Dubai experience is my ability to deliver complete solutions independently while collaborating effectively with international teams. I have successfully architected and built entire applications from scratch, managed multiple concurrent projects across different business domains (Real Estate, ERP, Property Marketplace), and consistently delivered high-quality solutions that meet strict UAE market standards. My commitment to writing clean, maintainable code and staying current with industry best practices has enabled me to thrive in Dubai's competitive tech landscape."
+      "At CASABOT, I work across Python and TypeScript services, conversational interfaces, event-driven automation, and production operations. My earlier work spans multi-tenant HRMS/CRM, property marketplaces, real estate management, and ERP systems.",
+      "My technical experience includes React, Next.js, TypeScript, Python, Node.js, RabbitMQ, AWS EC2, Docker, and DocumentDB. At CASABOT, I contribute to AI tool execution, knowledge grounding, authorization, and observability."
     ],
-    "closing": "I am excited about the opportunity to bring my Dubai-based technical expertise, regional market knowledge, and passion for creating innovative solutions to your organization. My experience working in the UAE's fast-paced technology sector, combined with my proven ability to deliver enterprise-level applications, makes me an ideal candidate for this position. I am immediately available and look forward to discussing how I can contribute to your team's success.",
+    "closing": "Please find my CV attached for your consideration. I welcome the opportunity to discuss how my experience aligns with your engineering needs.",
     "signature": {
       "farewell": "Sincerely",
       "name": "Anish Mahato"
     }
-  }
-} 
+  },
+  "projects": [
+    {
+      "name": "CASABOT AI Home - Rebuilding the Voice & Chat Experience",
+      "description": "",
+      "bullets": [
+        "Delivered voice/chat interfaces with microphone input and streamed text/audio responses.",
+        "Connected conversational requests to room controls and hotel guest services.",
+        "Added conversation history with room- and stay-specific context."
+      ]
+    },
+    {
+      "name": "CASABOT Customer Portal",
+      "description": "Onboarding, subscriptions, gateway linking, DocumentDB migration, ticketing, and HubSpot chatbot integration for knowledge-base support.",
+      "bullets": []
+    },
+    {
+      "name": "CASABOT Admin / Integrator Portals",
+      "description": "Role-based administration, fleet management, gateway diagnostics, and device commissioning.",
+      "bullets": []
+    }
+  ]
+}

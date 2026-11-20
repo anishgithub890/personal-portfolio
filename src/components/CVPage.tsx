@@ -112,7 +112,7 @@ export default function CVPage() {
                     </div>
                     <div className="text-right text-[10px] text-muted-foreground print:text-[8px]">
                       <p>{job.location}</p>
-                      <p>{job.startDate} - {job.endDate}</p>
+                      <p>{job.startDate} - {job.current ? 'Present' : job.endDate}</p>
                     </div>
                   </div>
                   <p className="text-muted-foreground mb-1 text-[10px] print:text-[8px]">{job.description}</p>

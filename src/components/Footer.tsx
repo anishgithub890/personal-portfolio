@@ -1,6 +1,7 @@
 'use client';
 
 import { Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import Link from 'next/link';
 
 const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/anishgithub890', icon: Github },
@@ -42,6 +43,10 @@ export default function Footer() {
           © {currentYear}
         </p>
       </div>
+      <nav aria-label="Legal" className="mx-auto flex max-w-7xl flex-wrap gap-x-6 gap-y-3 border-t border-white/10 px-4 py-5 text-sm text-muted-foreground sm:px-6 md:px-8">
+        <Link href="/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline">Terms &amp; Conditions</Link>
+        <Link href="/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline">Privacy Policy</Link>
+      </nav>
     </footer>
   );
 }

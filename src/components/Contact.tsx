@@ -249,6 +249,9 @@ export default function Contact() {
                   )}
                 />
 
+                <p className="text-xs leading-6 text-muted-foreground">
+                  Your details are used to respond to your inquiry. Read the <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary underline">Privacy Policy</a> before sending.
+                </p>
                 <Button
                   type="submit"
                   size="lg"

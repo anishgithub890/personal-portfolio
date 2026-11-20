@@ -8,7 +8,6 @@ import {
   Github,
   Home,
   Linkedin,
-  LogIn,
   LogOut,
   Mail,
   Menu,
@@ -17,7 +16,6 @@ import {
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import AuthDialog from "@/components/AuthDialog";
 import { cn } from "@/lib/utils";
 
 const navigationItems = [
@@ -192,7 +190,7 @@ export default function Sidebar() {
       </div>
 
       <div className="border-t border-white/10 p-6">
-        {session ? (
+        {session && (
           <div className="space-y-3">
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
               <p className="text-sm font-medium text-white">
@@ -211,17 +209,11 @@ export default function Sidebar() {
               Sign Out
             </Button>
           </div>
-        ) : (
-          <AuthDialog>
-            <Button
-              variant="outline"
-              className="w-full justify-center rounded-2xl border-white/12 bg-transparent text-white hover:bg-white/5"
-            >
-              <LogIn className="h-4 w-4" />
-              Sign In
-            </Button>
-          </AuthDialog>
         )}
+        <nav aria-label="Legal" className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs text-muted-foreground">
+          <a href="/terms" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className="hover:text-white hover:underline">Terms &amp; Conditions</a>
+          <a href="/privacy" target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className="hover:text-white hover:underline">Privacy Policy</a>
+        </nav>
       </div>
     </div>
   );

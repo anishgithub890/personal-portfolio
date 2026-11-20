@@ -20,6 +20,7 @@ import {
   SkillMeter,
 } from "@/components/MotionPrimitives";
 import {
+  getAllContent,
   getAboutContent,
   getExperienceContent,
   getHeroContent,
@@ -87,9 +88,7 @@ export default function Home() {
               </h1>
 
               <p className="mt-7 max-w-2xl text-base leading-8 text-muted-foreground sm:text-lg">
-                {hero.description} I build robust frontends, ship scalable
-                backend systems, and care deeply about making products feel
-                polished in real use.
+                {hero.description}
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -226,7 +225,7 @@ export default function Home() {
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {job.achievements
-                    .slice(0, 4)
+                    .slice(0, 6)
                     .map((achievement, achievementIndex) => (
                       <div
                         key={achievementIndex}
@@ -237,6 +236,20 @@ export default function Home() {
                     ))}
                 </div>
               </HoverLift>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal id="projects" className="section-card mt-8">
+          <p className="section-kicker">Selected Work</p>
+          <h2 className="section-title mt-4">Products I help build at CASABOT</h2>
+          <div className="mt-8 grid gap-4 xl:grid-cols-3">
+            {getAllContent().projects.map((project) => (
+              <article key={project.name} className="feature-card min-w-0">
+                <h3 className="text-lg font-semibold text-white">{project.name}</h3>
+                {project.description && <p className="mt-3 text-sm leading-7 text-muted-foreground">{project.description}</p>}
+                {project.bullets.length > 0 && <ul className="mt-3 list-disc space-y-2 pl-4 text-sm leading-7 text-muted-foreground">{project.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
+              </article>
             ))}
           </div>
         </Reveal>
@@ -399,13 +412,15 @@ export default function Home() {
         <Reveal className="mt-8">
           <div className="section-card flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="section-kicker">Next Step</p>
+              <p className="section-kicker">Engineering Partnership</p>
               <h2 className="mt-3 text-2xl font-semibold text-white">
-                Need a reliable product engineer?
+                From complex requirements to systems people depend on.
               </h2>
               <p className="mt-2 max-w-2xl text-sm leading-7 text-muted-foreground">
-                I can help with polished frontend architecture, scalable APIs,
-                enterprise dashboards, and smoother product UX.
+                I take ownership across product interfaces, AI services, and
+                cloud infrastructure, connecting architecture decisions to
+                tested releases and production operations. Let’s build software
+                that earns trust in everyday use.
               </p>
             </div>
             <Button asChild size="lg" className="rounded-full px-7">

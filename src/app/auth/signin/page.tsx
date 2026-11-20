@@ -48,16 +48,16 @@ export default function SignIn() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-      <Card className="w-full max-w-md">
+    <div className="flex min-h-[100svh] items-center justify-center bg-background px-4 py-12">
+      <Card className="w-full max-w-md rounded-3xl border-white/10 bg-card shadow-2xl shadow-black/20">
         <CardHeader className="space-y-1">
           <div className="flex items-center space-x-2">
-            <Link href="/" className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+            <Link href="/" aria-label="Back to portfolio" className="p-2 hover:bg-white/5 rounded-full transition-colors">
               <ArrowLeft className="h-4 w-4" />
             </Link>
             <div>
-              <CardTitle className="text-2xl font-bold">Welcome back</CardTitle>
-              <CardDescription>Sign in to your account</CardDescription>
+              <CardTitle className="text-2xl font-semibold">Owner access</CardTitle>
+              <CardDescription>Sign in to manage your portfolio</CardDescription>
             </div>
           </div>
         </CardHeader>
@@ -105,7 +105,8 @@ export default function SignIn() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-3 text-gray-400 hover:text-gray-600"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  className="absolute right-3 top-3 text-muted-foreground hover:text-white"
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -119,19 +120,10 @@ export default function SignIn() {
             <div className="text-center space-y-2">
               <Link
                 href="/auth/forgot-password"
-                className="text-sm text-blue-600 hover:text-blue-800 transition-colors"
+                className="text-sm text-primary hover:underline"
               >
                 Forgot your password?
               </Link>
-              <div className="text-sm text-gray-600">
-                Don&apos;t have an account?{' '}
-                <Link
-                  href="/auth/signup"
-                  className="text-blue-600 hover:text-blue-800 transition-colors font-medium"
-                >
-                  Sign up
-                </Link>
-              </div>
             </div>
           </form>
         </CardContent>

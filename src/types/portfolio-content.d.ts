@@ -161,6 +161,7 @@ export interface CoverLetterContent {
 }
 
 export interface PortfolioContent {
+  projects: Array<{ name: string; description: string; bullets: string[] }>;
   hero: HeroContent;
   about: AboutContent;
   experience: ExperienceContent;

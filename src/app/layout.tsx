@@ -1,32 +1,42 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Providers from "@/components/Providers";
-import AppShell from "@/components/AppShell";
+import type { Metadata, Viewport } from 'next';
+import './globals.css';
+import Providers from '@/components/Providers';
+import AppShell from '@/components/AppShell';
+import { getAboutContent, getHeroContent } from '@/lib/portfolio-content';
+
+const hero = getHeroContent();
+const title = `${hero.name} | ${hero.title}`;
+const description = getAboutContent().personalInfo.whoIAm;
+
+export const viewport: Viewport = {
+  themeColor: '#101319',
+  colorScheme: 'dark',
+};
 
 export const metadata: Metadata = {
-  title: "Anish Mahato | Full Stack Engineer",
-  description:
-    "Portfolio of Anish Mahato, a full stack engineer building fast, scalable, high-quality web products.",
+  title,
+  description,
   keywords: [
-    "Anish Mahato",
-    "Full Stack Engineer",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Portfolio",
+    'Anish Mahato',
+    'Full-Stack & AI Engineer',
+    'Backend Systems',
+    'AI Agents',
+    'System Design',
+    'Next.js',
+    'React',
+    'TypeScript',
+    'Portfolio',
   ],
   openGraph: {
-    type: "website",
-    title: "Anish Mahato | Full Stack Engineer",
-    description:
-      "Portfolio of Anish Mahato, a full stack engineer building fast, scalable, high-quality web products.",
-    siteName: "Anish Mahato Portfolio",
+    type: 'website',
+    title,
+    description,
+    siteName: 'Anish Mahato Portfolio',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Anish Mahato | Full Stack Engineer",
-    description:
-      "Portfolio of Anish Mahato, a full stack engineer building fast, scalable, high-quality web products.",
+    card: 'summary_large_image',
+    title,
+    description,
   },
 };
 

@@ -6,6 +6,7 @@
 
 @layer base {
   :root {
+    color-scheme: dark;
     --font-space-grotesk: "Sora", "Avenir Next", "Segoe UI", sans-serif;
     --font-ibm-plex-mono:
       "JetBrains Mono", "SFMono-Regular", "Cascadia Code", monospace;
@@ -37,6 +38,7 @@
   }
 
   html {
+    background-color: hsl(var(--background));
     overflow-x: hidden;
     scroll-behavior: smooth;
   }
@@ -44,6 +46,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     background-image:
+      linear-gradient(hsl(var(--background)), transparent 240px),
       radial-gradient(
         circle at top left,
         rgba(47, 224, 177, 0.16),
@@ -117,7 +120,7 @@
       linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
     background-size: 44px 44px;
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent);
+    mask-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9) 240px, transparent);
   }
 
   .panel {

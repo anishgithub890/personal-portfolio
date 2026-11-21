@@ -2,8 +2,8 @@
   "hero": {
     "greeting": "Hello, I'm",
     "name": "Anish Mahato",
-    "title": "Full Stack Engineer",
-    "description": "Building Core, CASABOT’s operating system for AI homes, alongside voice agents, connected services, and cloud infrastructure.",
+    "title": "Full-Stack & AI Engineer | Backend Systems | AI Agents",
+    "description": "I build enterprise SaaS, AI agents, and connected-home automation, owning products from system design through deployment and partner support.",
     "buttons": {
       "primary": "Learn More",
       "secondary": "Get In Touch"
@@ -11,11 +11,11 @@
   },
   "about": {
     "title": "About Me",
-    "subtitle": "A passionate Full Stack Engineer with a love for creating innovative solutions",
+    "subtitle": "Full-stack and AI engineering with end-to-end product ownership",
     "personalInfo": {
       "whoIAm": "Full Stack Software Engineer with 5 years of experience delivering enterprise and AI products, with end-to-end ownership in startup environments.",
-      "journey": "At CASABOT, I work across Python and TypeScript services, conversational interfaces, event-driven automation, and production operations. My earlier work spans multi-tenant HRMS/CRM, property marketplaces, real estate management, and ERP systems.",
-      "personal": "I focus on clear system design, secure access, useful AI behavior, and tested releases, with ownership from product requirements through production support.",
+      "journey": "At CASABOT, I contribute to voice/chat agents, adaptive home automation, enterprise portals, and connected hospitality workflows. My earlier work spans multi-tenant SaaS, real estate CRM, ERP systems, and on-premises client deployments.",
+      "personal": "I work directly with clients, partners, and business leaders to understand issues, resolve engineering support tickets, and turn feedback into product improvements.",
       "nationality": "Nepal"
     },
     "education": [
@@ -27,7 +27,7 @@
       {
         "degree": "Higher Secondary Education - Science",
         "institution": "Oxford Higher Secondary School",
-        "field": "2016 - 2018"
+        "field": "2017 - 2019"
       }
     ],
     "services": {
@@ -45,7 +45,7 @@
       },
       "design": {
         "title": "AI & Connected Products",
-        "technologies": "Voice/chat agents, knowledge grounding, guardrails, IoT integrations"
+        "technologies": "Voice/chat agents, adaptive automation, knowledge grounding, guardrails, LLM evaluations"
       }
     },
     "stats": [
@@ -91,7 +91,7 @@
         "startDate": "2026-02",
         "endDate": "",
         "current": true,
-        "description": "Contributing to Core, CASABOT’s operating system for AI homes, with conversational agents, event-driven services, and connected hospitality workflows.",
+        "description": "Build AI Home voice/chat agents, adaptive automation, and connected services, alongside enterprise customer and system integrator portals.",
         "technologies": [
           "Python",
           "TypeScript",
@@ -106,12 +106,14 @@
           "Grafana"
         ],
         "achievements": [
-          "Own full-stack delivery in a startup, translating product requirements into system designs, tested releases, and production support.",
-          "Design Python/TypeScript services for LLM tool execution and event-driven automation, using RabbitMQ workers, bounded retries, and reconciliation.",
-          "Ground AI responses in authorized knowledge, enforce room-scoped guardrails, and evaluate tool selection, prompt injection, missing context, and unauthorized actions.",
-          "Integrate Oracle OPERA/OHIP, smart-device platforms, HubSpot, and Chargebee to connect hospitality, CRM, and subscription workflows.",
-          "Implement Auth0/OpenID Connect (OIDC) authentication, server-side authorization, and Cloudflare-protected gateway access.",
-          "Deploy Docker services on AWS EC2/Linux, monitor application behavior with OpenTelemetry/Grafana, and contribute to CI/CD releases."
+          "Deliver enterprise-grade customer and system integrator portals with end-to-end ownership, earning recognition from the CEO.",
+          "Resolve partner and client support tickets, turning technical findings and feedback into product improvements.",
+          "Build event-driven automation and LLM tool execution with RabbitMQ workers, bounded retries, and reconciliation.",
+          "Contribute to autonomous AI Home automation with learned device patterns, sensor context, and user approval.",
+          "Develop knowledge grounding and AI guardrails, with 105 evaluation scenarios covering tool use, prompt injection, and room isolation.",
+          "Connect hospitality, CRM, and billing workflows through Oracle OPERA/OHIP, smart-device platforms, HubSpot, and Chargebee.",
+          "Implement Auth0/OIDC authentication, server-side authorization, and Cloudflare-protected gateway access.",
+          "Deploy Docker services on AWS EC2/Linux, add OpenTelemetry/Grafana monitoring, and support CI/CD releases."
         ]
       },
       {
@@ -121,7 +123,7 @@
         "startDate": "2024",
         "endDate": "2026-01",
         "current": false,
-        "description": "Delivered enterprise SaaS products across HRMS/CRM, property marketplaces, Fincore RMS, and ERP finance and inventory.",
+        "description": "Owned enterprise SaaS and real estate CRM delivery across frontend, backend, hosting, and client deployments, working directly with owners and the CEO.",
         "technologies": [
           "Next.js",
           "React",
@@ -134,9 +136,10 @@
         ],
         "achievements": [
           "Designed multi-tenant HRMS/CRM with company isolation, 100+ permissions, 200+ REST endpoints, and a 100+ table schema.",
-          "Owned property marketplace backend architecture, including AI-assisted matching, bulk imports, and Bayut/PropertyFinder integrations.",
+          "Owned real estate CRM frontend, backend gateways, hosting, and on-premises client deployments, including AI matching, bulk imports, and Bayut/PropertyFinder integrations.",
           "Delivered Fincore RMS contracts, payments, KYC, and maintenance workflows with 55+ reusable components and 15+ master-data modules.",
-          "Built ERP finance/inventory APIs; optimized data access with Redis, indexing, and pagination, and added Socket.io updates."
+          "Built ERP finance/inventory APIs; optimized data access with Redis, indexing, and pagination, and added Socket.io updates.",
+          "Collaborated directly with real estate owners and the CEO to understand issues and improve CRM workflows."
         ]
       },
       {
@@ -365,6 +368,7 @@
       "Chargebee",
       "OpenAI APIs",
       "ElevenLabs APIs",
+      "Adaptive Home Automation",
       "System Design",
       "Multi-tenant SaaS",
       "Git",
@@ -415,7 +419,7 @@
   "footer": {
     "brand": {
       "initials": "AM",
-      "tagline": "Full Stack Engineer & Creative Problem Solver"
+      "tagline": "Full-Stack & AI Engineer | Backend Systems | AI Agents"
     },
     "contact": {
       "email": "anishgithub890@gmail.com",
@@ -455,10 +459,10 @@
       "title": "Dear Hiring Manager",
       "greeting": "To Whom It May Concern"
     },
-    "opening": "I bring 5 years of experience delivering enterprise and AI products, with end-to-end ownership across full stack development, integrations, and cloud operations.",
+    "opening": "I bring 5 years of experience delivering enterprise and AI products, with end-to-end ownership in startup environments.",
     "body": [
-      "At CASABOT, I work across Python and TypeScript services, conversational interfaces, event-driven automation, and production operations. My earlier work spans multi-tenant HRMS/CRM, property marketplaces, real estate management, and ERP systems.",
-      "My technical experience includes React, Next.js, TypeScript, Python, Node.js, RabbitMQ, AWS EC2, Docker, and DocumentDB. At CASABOT, I contribute to AI tool execution, knowledge grounding, authorization, and observability."
+      "At CASABOT, I contribute to voice/chat agents, adaptive home automation, and enterprise portals. My delivery of customer and system integrator portals earned recognition from the CEO. I also resolve partner and client engineering issues and turn their feedback into product improvements.",
+      "My experience spans system design, event-driven services, AI knowledge grounding and evaluations, secure authentication, and cloud operations. Previously, I owned real estate CRM frontend and backend delivery, hosting, and on-premises deployments, working directly with real estate owners and the CEO."
     ],
     "closing": "Please find my CV attached for your consideration. I welcome the opportunity to discuss how my experience aligns with your engineering needs.",
     "signature": {
@@ -471,14 +475,14 @@
       "name": "CASABOT AI Home - Rebuilding the Voice & Chat Experience",
       "description": "",
       "bullets": [
-        "Delivered voice/chat interfaces with microphone input and streamed text/audio responses.",
-        "Connected conversational requests to room controls and hotel guest services.",
-        "Added conversation history with room- and stay-specific context."
+        "Built microphone-enabled chat with streamed text/audio and room- and stay-specific conversation history.",
+        "Connected guest requests to room controls and hotel services.",
+        "Reduced peak guest acknowledgement time from 3.7s to ~0.6s using batched commits in a 2,000-request simulation."
       ]
     },
     {
       "name": "CASABOT Customer Portal",
-      "description": "Onboarding, subscriptions, gateway linking, DocumentDB migration, ticketing, and HubSpot chatbot integration for knowledge-base support.",
+      "description": "Built onboarding, subscriptions, gateway linking, ticketing, and HubSpot knowledge-base chatbot support; migrated to DocumentDB while preserving ~380 database call sites.",
       "bullets": []
     },
     {

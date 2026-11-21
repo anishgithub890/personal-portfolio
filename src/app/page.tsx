@@ -63,7 +63,7 @@ export default function Home() {
 
   return (
     <div className="relative overflow-x-hidden">
-      <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(115deg,rgba(47,224,177,0.08),transparent_24%,rgba(255,255,255,0.04)_58%,transparent_76%)]" />
+      <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(115deg,rgba(47,224,177,0.08),transparent_24%,rgba(255,255,255,0.04)_58%,transparent_76%)] [mask-image:linear-gradient(to_bottom,transparent,black_240px)]" />
       <div className="mx-auto max-w-7xl px-4 pb-12 pt-24 sm:px-6 md:px-8 md:pb-16 md:pt-12">
         <section id="home" className="hero-shell relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,224,177,0.22),transparent_26%),radial-gradient(circle_at_left,rgba(255,255,255,0.10),transparent_22%)]" />
@@ -224,9 +224,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {job.achievements
-                    .slice(0, 6)
-                    .map((achievement, achievementIndex) => (
+                  {job.achievements.map((achievement, achievementIndex) => (
                       <div
                         key={achievementIndex}
                         className="rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-3 text-sm leading-7 text-muted-foreground"

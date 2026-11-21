@@ -7,34 +7,15 @@ import {
   Database,
   Mail,
   ServerCog,
-  Sparkles,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import {
-  CountUp,
-  HoverLift,
-  Reveal,
-  SkillMeter,
-} from "@/components/MotionPrimitives";
-import {
-  getAllContent,
-  getAboutContent,
-  getExperienceContent,
-  getHeroContent,
-  getSkillsContent,
-} from "@/lib/portfolio-content";
+import { CountUp, HoverLift, Reveal, SkillMeter } from "@/components/MotionPrimitives";
+import { getAllContent, getAboutContent, getExperienceContent, getHeroContent, getSkillsContent } from "@/lib/portfolio-content";
 
 function formatDuration(startDate: string, endDate: string, current: boolean) {
-  const start = startDate.includes("-") ? startDate.slice(0, 7) : startDate;
-  const end = current
-    ? "Present"
-    : endDate.includes("-")
-      ? endDate.slice(0, 7)
-      : endDate;
-  return `${start} - ${end}`;
+  return `${startDate} - ${current ? "Present" : endDate}`;
 }
 
 function formatCategoryLabel(category: string) {
@@ -64,25 +45,15 @@ export default function Home() {
   return (
     <div className="relative overflow-x-hidden">
       <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(115deg,rgba(47,224,177,0.08),transparent_24%,rgba(255,255,255,0.04)_58%,transparent_76%)] [mask-image:linear-gradient(to_bottom,transparent,black_240px)]" />
-      <div className="mx-auto max-w-7xl px-4 pb-12 pt-24 sm:px-6 md:px-8 md:pb-16 md:pt-12">
+      <div className="mx-auto max-w-7xl px-4 pb-12 pt-24 sm:px-6 md:px-8 md:pb-16 lg:pt-12">
         <section id="home" className="hero-shell relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(47,224,177,0.22),transparent_26%),radial-gradient(circle_at_left,rgba(255,255,255,0.10),transparent_22%)]" />
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
-          <div className="relative grid gap-12 lg:grid-cols-[1.4fr_0.8fr] lg:items-center">
+          <div className="relative grid gap-12 xl:grid-cols-[1.4fr_0.8fr] xl:items-center">
             <Reveal>
-              <div className="mb-6 flex flex-wrap gap-3">
-                <Badge className="rounded-full bg-primary/15 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-primary hover:bg-primary/15">
-                  {hero.greeting}
-                </Badge>
-                <span className="pill">
-                  <Sparkles className="h-3.5 w-3.5 text-primary" />
-                  Building smoother digital products
-                </span>
-              </div>
+              <p className="section-kicker mb-8">Independent thinking. End-to-end engineering.</p>
 
               <h1 className="max-w-4xl text-balance text-4xl font-semibold leading-[0.96] text-white sm:text-6xl xl:text-8xl">
                 {hero.name}
-                <span className="mt-5 block max-w-3xl bg-gradient-to-r from-white via-white/78 to-primary/80 bg-clip-text text-2xl font-medium leading-tight text-transparent sm:text-4xl xl:text-5xl">
+                <span className="mt-6 block max-w-3xl text-2xl font-normal leading-tight text-white/60 sm:text-3xl xl:text-4xl">
                   {hero.title}
                 </span>
               </h1>
@@ -115,9 +86,8 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.12} className="relative mx-auto w-full max-w-md">
-              <div className="absolute -inset-5 rounded-[38px] bg-primary/12 blur-3xl" />
-              <div className="portrait-card relative overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.04] p-4 shadow-2xl shadow-black/25">
-                <div className="mb-4 flex items-center justify-between rounded-2xl border border-white/10 bg-black/25 px-4 py-3">
+              <div className="portrait-card relative overflow-hidden">
+                <div className="mb-5 flex items-center justify-between gap-4 border-b border-white/15 pb-4">
                   <div>
                     <p className="text-sm font-medium text-white">
                       Currently building
@@ -129,7 +99,7 @@ export default function Home() {
                   </div>
                   <span className="h-3 w-3 rounded-full bg-primary shadow-[0_0_18px_rgba(47,224,177,0.9)]" />
                 </div>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[26px] border border-white/10">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-lg">
                   <Image
                     src="/thumbnail_profile.png"
                     alt="Anish Mahato portrait"
@@ -153,7 +123,7 @@ export default function Home() {
                     return (
                       <div
                         key={item.label}
-                        className="rounded-2xl border border-white/10 bg-black/25 px-4 py-3"
+                        className="min-w-0 border-t border-white/15 py-3"
                       >
                         <Icon className="h-4 w-4 text-primary" />
                         <p className="mt-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -241,12 +211,15 @@ export default function Home() {
         <Reveal id="projects" className="section-card mt-8">
           <p className="section-kicker">Selected Work</p>
           <h2 className="section-title mt-4">Products I help build at CASABOT</h2>
-          <div className="mt-8 grid gap-4 xl:grid-cols-3">
-            {getAllContent().projects.map((project) => (
-              <article key={project.name} className="feature-card min-w-0">
-                <h3 className="text-lg font-semibold text-white">{project.name}</h3>
+          <div className="mt-10 divide-y divide-white/10">
+            {getAllContent().projects.map((project, index) => (
+              <article key={project.name} className="grid min-w-0 gap-5 py-8 lg:grid-cols-[3rem_1fr_1.2fr]">
+                <span className="font-mono text-sm text-primary">0{index + 1}</span>
+                <h3 className="max-w-sm text-xl font-medium tracking-tight text-white">{project.name}</h3>
+                <div>
                 {project.description && <p className="mt-3 text-sm leading-7 text-muted-foreground">{project.description}</p>}
                 {project.bullets.length > 0 && <ul className="mt-3 list-disc space-y-2 pl-4 text-sm leading-7 text-muted-foreground">{project.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
+                </div>
               </article>
             ))}
           </div>
@@ -263,7 +236,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 2xl:grid-cols-3">
             {Object.entries(skills.categories).map(([category, items]) => (
               <HoverLift key={category} className="skill-card">
                 <div className="mb-5 flex items-center justify-between">
@@ -277,7 +250,7 @@ export default function Home() {
                 <div className="space-y-4">
                   {items.map((skill) => (
                     <div key={skill.name}>
-                      <div className="mb-2 flex items-center justify-between text-sm">
+                      <div className="mb-2 flex items-center justify-between gap-3 text-sm">
                         <span className="text-white">{skill.name}</span>
                         <CountUp
                           value={skill.proficiency}

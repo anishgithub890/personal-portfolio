@@ -116,7 +116,7 @@ export default function Contact() {
       </div>
 
       <Card className="rounded-[30px] border-white/10 bg-white/[0.03] py-0 shadow-2xl shadow-black/10 backdrop-blur-xl">
-        <CardContent className="p-6 sm:p-8">
+        <CardContent className="min-w-0 p-4 sm:p-8">
           {isSubmitted ? (
             <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
               <div className="rounded-full border border-primary/25 bg-primary/10 p-4">
@@ -147,7 +147,7 @@ export default function Contact() {
                   </p>
                 </div>
 
-                <div className="grid gap-5 md:grid-cols-2">
+                <div className="grid gap-5 sm:grid-cols-2">
                   <FormField
                     control={form.control}
                     name="name"

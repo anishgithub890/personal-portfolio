@@ -5,6 +5,7 @@ import { useSession, signOut } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import {
   Briefcase,
+  Layers,
   Github,
   Home,
   Linkedin,
@@ -26,6 +27,7 @@ const navigationItems = [
     href: "#experience",
     icon: Briefcase,
   },
+  { id: "projects", label: "Projects", href: "#projects", icon: Layers },
   { id: "skills", label: "Skills", href: "#skills", icon: Wrench },
   { id: "about", label: "About", href: "#about", icon: User },
   { id: "contact", label: "Contact", href: "#contact", icon: Mail },
@@ -47,6 +49,25 @@ export default function Sidebar() {
   const [activeSection, setActiveSection] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const close = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
+    };
+    const resize = () => {
+      if (window.innerWidth >= 1024) setMobileOpen(false);
+    };
+    window.addEventListener("keydown", close);
+    window.addEventListener("resize", resize);
+    return () => {
+      document.body.style.overflow = previous;
+      window.removeEventListener("keydown", close);
+      window.removeEventListener("resize", resize);
+    };
+  }, [mobileOpen]);
+
   const sectionIds = useMemo(
     () =>
       navigationItems
@@ -64,24 +85,24 @@ export default function Sidebar() {
 
     if (sections.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-        if (visible?.target?.id) {
-          setActiveSection(visible.target.id);
-        }
-      },
-      {
-        rootMargin: "-20% 0px -55% 0px",
-        threshold: [0.15, 0.4, 0.7],
-      },
-    );
-
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    let frame = 0;
+    const update = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const current = [...sections].reverse().find(
+          (section) => section.getBoundingClientRect().top <= window.innerHeight * 0.3,
+        );
+        setActiveSection(current?.id ?? sections[0].id);
+      });
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, [pathname, sectionIds]);
 
   useEffect(() => {
@@ -130,7 +151,7 @@ export default function Sidebar() {
       )}
       <div className="flex-1 min-h-0 space-y-8 overflow-y-auto overscroll-contain p-6 pt-4">
         <div>
-          <nav className="space-y-2">
+          <nav aria-label="Portfolio sections" className="space-y-2">
             {navigationItems.map((item) => {
               const Icon = item.icon;
               const isActive = item.href.startsWith("#")
@@ -140,6 +161,7 @@ export default function Sidebar() {
               return (
                 <a
                   key={item.id}
+                  aria-current={isActive ? "location" : undefined}
                   href={item.href}
                   onClick={(event) => {
                     if (item.href.startsWith("#")) {
@@ -148,7 +170,7 @@ export default function Sidebar() {
                     handleNavClick(item.href, item.id);
                   }}
                   className={cn(
-                    "group flex items-center justify-between rounded-2xl border px-4 py-3 text-sm",
+                    "group flex min-h-12 items-center justify-between rounded-2xl border px-4 py-3 text-sm",
                     isActive
                       ? "border-primary/35 bg-primary/12 text-white"
                       : "border-white/8 bg-white/[0.02] text-muted-foreground hover:border-white/15 hover:bg-white/[0.05] hover:text-white",
@@ -178,7 +200,7 @@ export default function Sidebar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-3 rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-3 text-sm text-muted-foreground hover:border-white/15 hover:bg-white/[0.05] hover:text-white"
+                  className="flex min-h-11 items-center gap-3 rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-3 text-sm text-muted-foreground hover:border-white/15 hover:bg-white/[0.05] hover:text-white"
                 >
                   <Icon className="h-4 w-4" />
                   {social.label}
@@ -224,7 +246,7 @@ export default function Sidebar() {
         <button
           type="button"
           onClick={() => setMobileOpen(true)}
-          className="fixed right-4 top-4 z-50 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/35 text-white backdrop-blur hover:border-white/20 hover:bg-black/50 md:hidden"
+          className="fixed right-4 top-4 z-50 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/35 text-white backdrop-blur hover:border-white/20 hover:bg-black/50 lg:hidden"
           aria-label="Open navigation"
           aria-expanded={false}
         >
@@ -234,7 +256,7 @@ export default function Sidebar() {
 
       {mobileOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+          className="fixed inset-0 z-[70] bg-black/60 backdrop-blur-sm lg:hidden"
           onClick={() => setMobileOpen(false)}
         >
           <div
@@ -246,7 +268,7 @@ export default function Sidebar() {
         </div>
       )}
 
-      <aside className="fixed inset-y-0 left-0 z-40 hidden w-[288px] p-5 md:block">
+      <aside className="fixed inset-y-0 left-0 z-40 hidden w-[288px] p-5 lg:block">
         {renderNavBody()}
       </aside>
     </>

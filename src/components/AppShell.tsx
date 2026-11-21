@@ -6,7 +6,7 @@ import LegalNotice from "@/components/LegalNotice";
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  if (pathname === "/terms" || pathname === "/privacy" || pathname === "/owner-access") {
+  if (pathname === "/terms" || pathname === "/privacy" || pathname === "/owner-access" || pathname.startsWith("/auth/")) {
     return <main className="relative min-h-screen">{children}</main>;
   }
 
@@ -17,7 +17,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <div className="pointer-events-none fixed inset-0 opacity-70">
         <div className="grid-shell h-full w-full" />
       </div>
-      <main className="relative min-h-screen md:ml-[288px]">{children}</main>
+      <main className="relative min-h-screen lg:ml-[288px]">{children}</main>
     </>
   );
 }

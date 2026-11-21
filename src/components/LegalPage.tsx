@@ -9,7 +9,7 @@ export default function LegalPage({ title, introduction, sections }: {
 }) {
   return <>
     <div className="mx-auto max-w-4xl px-4 pb-16 pt-24 sm:px-8 md:pt-12">
-      <article className="section-card">
+      <article className="rounded-2xl border border-white/10 bg-card p-6 sm:p-10">
         <Link href="/" className="text-sm text-primary hover:underline">Back to Portfolio</Link>
         <p className="section-kicker mt-8">Legal</p>
         <h1 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">{title}</h1>

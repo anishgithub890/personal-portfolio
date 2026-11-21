@@ -6,6 +6,7 @@ import {
   useMotionValue,
   useSpring,
   useTransform,
+  useReducedMotion,
   type HTMLMotionProps,
 } from "framer-motion";
 import { useEffect, useRef } from "react";
@@ -15,9 +16,10 @@ type MotionBlockProps = HTMLMotionProps<"div"> & {
 };
 
 export function Reveal({ delay = 0, ...props }: MotionBlockProps) {
+  const reduceMotion = useReducedMotion();
   return (
     <motion.div
-      initial={{ opacity: 0, y: 22 }}
+      initial={reduceMotion ? false : { opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay }}
@@ -27,9 +29,10 @@ export function Reveal({ delay = 0, ...props }: MotionBlockProps) {
 }
 
 export function HoverLift(props: MotionBlockProps) {
+  const reduceMotion = useReducedMotion();
   return (
     <motion.div
-      whileHover={{ y: -6 }}
+      whileHover={reduceMotion ? undefined : { y: -2 }}
       transition={{ duration: 0.24, ease: "easeOut" }}
       {...props}
     />
